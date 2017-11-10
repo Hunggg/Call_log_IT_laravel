@@ -11,6 +11,10 @@
 |
 */
 
+include_once 'backend/admin.php';
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    echo 'nothing-truy cap bi chan';
+})->name('test');
+
+//test
