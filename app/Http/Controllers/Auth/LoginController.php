@@ -35,7 +35,7 @@ class LoginController extends Controller
             if(Auth::user()->level == 1)
                 return redirect('leader');
             elseif (Auth::user()->level == 2) {
-                return redirect('sub-leader');
+                return redirect('sub_leader');
             } elseif (Auth::user()->level == 3) {
                 return redirect('member');
             }

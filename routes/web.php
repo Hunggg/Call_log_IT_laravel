@@ -14,7 +14,7 @@
 include_once 'backend/admin.php';
 
 Route::get('/', function () {
-    echo 'nothing-truy cap bi chan';
-})->name('test');
+    return redirect()->route('login');
+});
 
 //test

@@ -19,26 +19,24 @@
           
         });
        /* Route sub leader */
-        Route::group(['middleware'=>'issub_leader'], function(){
-           Route::group(['prefix'=>'sub-leader'], function(){
-               Route::get('/', function(){
-                  echo 'middleware ok sub leader';
-               })->name('sub_leader');
+         Route::group(['prefix'=>'sub-leader','middleware'=>'issub_leader'], function(){
+            
+           
+               Route::get('/','Sub_Leader\Sub_LeaderController@index')->name('sub_leader');
                
                //add route here
                
-           });
+          
         });
         /* Route member */
-        Route::group(['middleware'=>'ismember'], function(){
-           Route::group(['prefix'=>'member'], function(){
-               Route::get('/', function(){
-                   echo 'middleware ok';
-               })->name('member');
+         Route::group(['prefix'=>'member','middleware'=>'member'], function(){
+            
+           
+               Route::get('/','Member\MemberController@index')->name('member');
                
                //add route here
                
-           });
+          
         });
     });
 
