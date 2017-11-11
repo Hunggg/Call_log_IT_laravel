@@ -44,7 +44,7 @@
           
         });
         /* Route member */
-         Route::group(['prefix'=>'member','middleware'=>'member'], function(){
+         Route::group(['prefix'=>'member','middleware'=>'ismember'], function(){
             
            /* Route member HN */
             Route::group(['prefix'=>'HaNoi','middleware'=>'it_hn'], function(){

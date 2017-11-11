@@ -30,6 +30,27 @@ class LoginController extends Controller
         //kiem tra dang nhap chua
         if(!Auth::check()) {
             return view('login.login');
+        }else {
+            if(Auth::user()->level == 1){
+                if(Auth::user()->bo_phan_IT == 1){
+                    return redirect()->route('leader_hn');
+                }else {
+                    return redirect()->route('leader_dn');
+                }
+            }
+            elseif(Auth::user()->level == 2){
+                    if(Auth::user()->bo_phan_IT == 1){
+                        return redirect()->route('sub_leader_hn');
+                    }else {
+                        return redirect()->route('sub_leader_dn');
+                    }
+            } elseif(Auth::user()->level == 3){
+                    if(Auth::user()->bo_phan_IT == 1){
+                        return redirect()->route('member_hn');
+                    }else {
+                        return redirect()->route('member_dn');
+                    }
+            }
         }
     }
     public function login(Request $request)
