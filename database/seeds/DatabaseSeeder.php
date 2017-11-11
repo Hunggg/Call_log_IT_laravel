@@ -21,9 +21,12 @@ class userSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-           ['name'=>'leader','password'=>bcrypt('123456'),'level'=>1],
-            ['name'=>'sub_leader','password'=>bcrypt('123456'),'level'=>2],
-            ['name'=>'member','password'=>bcrypt('hungcan1997TB'),'level'=>3]
+           ['name'=>'leader_hn','password'=>bcrypt('123456'),'bo_phan_IT'=>1,'level'=>1],
+            ['name'=>'leader_dn','password'=>bcrypt('123456'),'bo_phan_IT'=>2,'level'=>1],
+            ['name'=>'sub_leader_hn','password'=>bcrypt('123456'),'bo_phan_IT'=>1,'level'=>2],
+            ['name'=>'sub_leader_dn','password'=>bcrypt('123456'),'bo_phan_IT'=>2,'level'=>2],
+            ['name'=>'member_hn','password'=>bcrypt('hungcan1997TB'),'bo_phan_IT'=>1,'level'=>3],
+            ['name'=>'member_dn','password'=>bcrypt('hungcan1997TB'),'bo_phan_IT'=>2,'level'=>3]
         ]);
     }
 }

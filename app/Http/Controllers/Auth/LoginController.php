@@ -30,25 +30,29 @@ class LoginController extends Controller
         //kiem tra dang nhap chua
         if(!Auth::check()) {
             return view('login.login');
-        }//neu dang nhap roi se kiem tra level cua nguoi dung roi vao luon 
-    	else {
-            if(Auth::user()->level == 1)
-                return redirect('leader');
-            elseif (Auth::user()->level == 2) {
-                return redirect('sub_leader');
-            } elseif (Auth::user()->level == 3) {
-                return redirect('member');
-            }
         }
     }
     public function login(Request $request)
     {
         if (Auth::attempt(['name' => $request->username, 'password' => $request->password,'level' => 1])) {
-            return redirect()->route('leader');
+            if(Auth::attempt(['name' => $request->username,'password' => $request->password,'bo_phan_IT' => 1])){
+                return redirect()->route('leader_hn');    
+            } else {
+                return redirect()->route('leader_dn');
+            }
+            
         } elseif (Auth::attempt(['name' => $request->username, 'password' => $request->password,'level'=>2])) {
-        	return redirect()->route('sub_leader');
+        	if(Auth::attempt(['name' => $request->username,'password' => $request->password,'bo_phan_IT' => 1])){
+                return redirect()->route('sub_leader_hn');    
+            } else {
+                return redirect()->route('sub_leader_dn');
+            }
         } elseif (Auth::attempt(['name' => $request->username, 'password' => $request->password,'level'=>3])) {
-        	return redirect()->route('member');
+        	if(Auth::attempt(['name' => $request->username,'password' => $request->password,'bo_phan_IT' => 1])){
+                return redirect()->route('member_hn');    
+            } else {
+                return redirect()->route('member_dn');
+            }
         } else {
         	return redirect()->back();
         }
