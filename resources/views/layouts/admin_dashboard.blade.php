@@ -88,7 +88,7 @@
                 <li>
                     <p>TRANG CHỦ</p>
                 </li>
-                <li><a href="#" class="active">@yield('name_page')</a></li>
+                <li><a class="active">@yield('name_page')</a></li>
             </ul>
             @yield('main')
         </div>
@@ -120,6 +120,9 @@
     <!-- Custom Theme JavaScript -->
     
     <script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
+    
+    @yield('js')
+    
 </body>
 
 </html>

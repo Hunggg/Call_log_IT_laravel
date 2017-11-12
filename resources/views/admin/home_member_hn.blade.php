@@ -5,13 +5,13 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <button href="abc.html" type="button" class="btn btn-danger">Create request</button>
+                                <button href="{{route('crequest_member_hn')}}" type="button" class="btn btn-danger">Create request</button>
                                
                             </div>
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                     
                         <li>
@@ -86,4 +86,8 @@
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
-@endsection        
+@endsection 
+
+@section('name_page')
+Trang quản lý Member bộ phận khu vực Hà Nội
+@endsection       

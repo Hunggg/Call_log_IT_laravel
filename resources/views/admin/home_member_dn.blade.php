@@ -5,7 +5,7 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <button href="abc.html" type="button" class="btn btn-danger">Create request</button>
+                                <button href="{{route('crequest_member_dn')}}" type="button" class="btn btn-danger">Create request</button>
                                
                             </div>
                             <!-- /input-group -->
@@ -87,3 +87,8 @@
                 <!-- /.sidebar-collapse -->
             </div>
 @endsection        
+
+
+@section('name_page')
+Trang quản lý Member bộ phận khu vực Hà Nội
+@endsection

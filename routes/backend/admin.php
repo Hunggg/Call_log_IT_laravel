@@ -19,11 +19,13 @@
                 //1 home co leader HN (view create request,C4,C5)
                 //2 click job in C4 -> edit->........
                 //3 click job in C5 -> edit->.......
+                Route::get('tao-yeu-cau','Leader\CreateRequestController@index_hn')->name('crequest_leader_hn');
             });
            /* Route leader DN */
             Route::group(['prefix'=>'DaNang','middleware'=>'it_dn'], function(){
                 Route::get('/','Leader\LeaderController@index_dn')->name('leader_dn');
-                // code Route leader HaNoi here
+                // code Route leader DaNang here
+                Route::get('tao-yeu-cau','Leader\CreateRequestController@index_dn')->name('crequest_leader_dn');
             });
           
         });
@@ -34,11 +36,13 @@
             Route::group(['prefix'=>'HaNoi','middleware'=>'it_hn'], function(){
                 Route::get('/','Sub_Leader\Sub_LeaderController@index_hn')->name('sub_leader_hn');
                 // code Route subleader HaNoi here
+                Route::get('tao-yeu-cau','Sub_Leader\CreateRequestController@index_hn')->name('crequest_subleader_hn');
             });
            /* Route subleader DN */
             Route::group(['prefix'=>'DaNang','middleware'=>'it_dn'], function(){
                 Route::get('/','Sub_Leader\Sub_LeaderController@index_dn')->name('sub_leader_dn');
-                // code Route subleader HaNoi here
+                // code Route subleader DaNang here
+                Route::get('tao-yeu-cau','Sub_Leader\CreateRequestController@index_dn')->name('crequest_subleader_dn');
             });
                
           
@@ -50,11 +54,13 @@
             Route::group(['prefix'=>'HaNoi','middleware'=>'it_hn'], function(){
                 Route::get('/','Member\MemberController@index_hn')->name('member_hn');
                 // code Route member HaNoi here
+                Route::get('tao-yeu-cau','Member\CreateRequestController@index_hn')->name('crequest_member_hn');
             });
            /* Route subleader DN */
             Route::group(['prefix'=>'DaNang','middleware'=>'it_dn'], function(){
                 Route::get('/','Member\MemberController@index_dn')->name('member_dn');
-                // code Route member HaNoi here
+                // code Route member DaNang here
+                Route::get('tao-yeu-cau','Member\CreateRequestController@index_dn')->name('crequest_member_dn');
             });
                
           
