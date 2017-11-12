@@ -9,10 +9,10 @@ class LeaderController extends Controller
 {
     public function index_hn()
     {
-        echo 'da cai middleware thanh cong cho leader_hn';
+        return view('admin.home_leader_hn');
     }
     public function index_dn()
     {
-        echo 'da cai middleware thanh cong cho leader_dn';
+        return view('admin.home_leader_dn');
     }
 }

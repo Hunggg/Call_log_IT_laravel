@@ -9,11 +9,11 @@ class MemberController extends Controller
 {
      public function index_hn()
     {
-        echo 'da cai middleware thanh cong cho member_hn';
+        return view('admin.home_member_hn');
     }
     
     public function index_dn()
     {
-        echo 'da cai middleware thanh cong cho member_dn';
+        return view('admin.home_member_dn');
     }
 }

@@ -9,10 +9,10 @@ class Sub_LeaderController extends Controller
 {
      public function index_hn()
     {
-        echo 'da cai middleware thanh cong cho sub_leader_hn';
+        return view('admin.home_subleader_hn');
     }
      public function index_dn()
     {
-        echo 'da cai middleware thanh cong cho sub_leader_dn';
+        return view('admin.home_subleader_dn');
     }
 }
