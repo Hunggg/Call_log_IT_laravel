@@ -18,7 +18,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Việc tôi yêu cầu<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="glyphicon glyphicon-tasks" href="flot.html">    All</a>
+                                    <a class="glyphicon glyphicon-tasks" href="{{route('srequest_indi_leader_hn')}}">    All</a>
                                 </li>
                                 <li>
                                     <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
@@ -39,7 +39,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Công việc liên quan<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="glyphicon glyphicon-tasks" href="flot.html">    All</a>
+                                    <a class="glyphicon glyphicon-tasks" href="{{route('srequest_relev_leader_hn')}}">    All</a>
                                 </li>
                                 <li>
                                     <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>

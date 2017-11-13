@@ -11,14 +11,14 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                     
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Việc tôi yêu cầu<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="glyphicon glyphicon-tasks" href="flot.html">    All</a>
+                                    <a class="glyphicon glyphicon-tasks" href="{{route('srequest_indi_member_dn')}}">    All</a>
                                 </li>
                                 <li>
                                     <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
@@ -39,7 +39,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Công việc liên quan<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="glyphicon glyphicon-tasks" href="flot.html">    All</a>
+                                    <a class="glyphicon glyphicon-tasks" href="{{route('srequest_relev_member_dn')}}">    All</a>
                                 </li>
                                 <li>
                                     <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
