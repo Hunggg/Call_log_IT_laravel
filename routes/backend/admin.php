@@ -22,6 +22,7 @@
                 Route::get('tao-yeu-cau','Leader\CreateRequestController@index_hn')->name('crequest_leader_hn');
                 Route::get('list-toi-yeu-cau','Leader\ShowIndividualRequestController@index_hn')->name('srequest_indi_leader_hn');
                 Route::get('list-cong-viec-lien-quan','Leader\ShowRelevantRequestController@index_hn')->name('srequest_relev_leader_hn');
+                Route::get('list-cong-viec-cua-team','Leader\ShowTeamRequestController@index_hn')->name('srequest_team_leader_hn');
                 
             });
            /* Route leader DN */
@@ -31,6 +32,7 @@
                 Route::get('tao-yeu-cau','Leader\CreateRequestController@index_dn')->name('crequest_leader_dn');
                 Route::get('list-toi-yeu-cau','Leader\ShowIndividualRequestController@index_dn')->name('srequest_indi_leader_dn');
                 Route::get('list-cong-viec-lien-quan','Leader\ShowRelevantRequestController@index_dn')->name('srequest_relev_leader_dn');
+                Route::get('list-cong-viec-cua-team','Leader\ShowTeamRequestController@index_dn')->name('srequest_team_leader_dn');
             });
           
         });
@@ -44,6 +46,7 @@
                 Route::get('tao-yeu-cau','Sub_Leader\CreateRequestController@index_hn')->name('crequest_subleader_hn');
                 Route::get('list-toi-yeu-cau','Sub_Leader\ShowIndividualRequestController@index_hn')->name('srequest_indi_subleader_hn');
                 Route::get('list-cong-viec-lien-quan','Sub_Leader\ShowRelevantRequestController@index_hn')->name('srequest_relev_subleader_hn');
+                Route::get('list-cong-viec-cua-team','Sub_Leader\ShowTeamRequestController@index_hn')->name('srequest_team_subleader_hn');
             });
            /* Route subleader DN */
             Route::group(['prefix'=>'DaNang','middleware'=>'it_dn'], function(){
@@ -52,6 +55,7 @@
                 Route::get('tao-yeu-cau','Sub_Leader\CreateRequestController@index_dn')->name('crequest_subleader_dn');
                 Route::get('list-toi-yeu-cau','Sub_Leader\ShowIndividualRequestController@index_dn')->name('srequest_indi_subleader_dn');
                 Route::get('list-cong-viec-lien-quan','Sub_Leader\ShowRelevantRequestController@index_dn')->name('srequest_relev_subleader_dn');
+                Route::get('list-cong-viec-cua-team','Sub_Leader\ShowTeamRequestController@index_dn')->name('srequest_team_subleader_dn');
             });
                
           

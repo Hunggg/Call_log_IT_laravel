@@ -61,7 +61,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Công việc của team<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="glyphicon glyphicon-tasks" href="flot.html">    All</a>
+                                    <a class="glyphicon glyphicon-tasks" href="{{route('srequest_team_leader_hn')}}">    All</a>
                                 </li>
                                 <li>
                                     <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
