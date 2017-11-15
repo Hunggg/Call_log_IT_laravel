@@ -144,6 +144,8 @@
 	 "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="{{ URL::asset('public/js/bootstrap-filestyle.min.js') }}"></script>
+	
 
 	@yield('js')
 
