@@ -11,12 +11,7 @@
 
 	<title>Spec IT request V1.0</title>
 
-	<!-- jQuery -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.js"></script>
-	<script src="{{ URL::asset('public/vendor/jquery/jquery.min.js') }}"></script>
-
-	<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
-	<script src="https://cdn.ckeditor.com/4.7.3/basic/ckeditor.js"></script>
+	
 
 
 	<!-- Bootstrap Core CSS -->
@@ -29,8 +24,12 @@
 
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('public/dist/css/sb-admin-2.css') }}">
 	<!-- Morris Charts CSS -->
-
+   
+    
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/vendor/morrisjs/morris.css') }}">
+    
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('public/vendor/font-awesome/css/font-awesome.min.css') }}">
+	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -108,9 +107,14 @@
 	</div>
 	<!-- /#wrapper -->
 
+    <!-- jQuery -->
+  
+	
 
 	<!-- Bootstrap Core JavaScript -->
 
+  
+    <script src="{{ URL::asset('public/vendor/jquery/jquery.min.js') }}"></script>
 	<script src="{{ URL::asset('public/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 	<!-- Metis Menu Plugin JavaScript -->
 
@@ -119,17 +123,23 @@
 
 	<script src="{{ URL::asset('public/vendor/raphael/raphael.min.js') }}"></script>
 
+      
+	<!--<script src="{{ URL::asset('public/vendor/morrisjs/morris.min.js') }}"></script>-->
 
-	<script src="{{ URL::asset('public/vendor/morrisjs/morris.min.js') }}"></script>
 
+	<!--<script src="{{ URL::asset('public/data/morris-data.js') }}"></script>-->
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.js"></script>
+	
 
-	<script src="{{ URL::asset('public/data/morris-data.js') }}"></script>
+	<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
+	<script src="https://cdn.ckeditor.com/4.7.3/basic/ckeditor.js"></script>
 
 	<!-- Custom Theme JavaScript -->
 
 	<script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
 	
-	{{-- datetimepicker --}}
+	<!--Date keeper -->
 	<link rel="stylesheet" type="text/css" href:
 	 "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 	

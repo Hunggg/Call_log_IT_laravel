@@ -1,7 +1,11 @@
-@extends('admin.home_leader_dn') @section('css')
+@extends('admin.home_leader_dn') 
+@section('css')
 <!--link css only page here-->
 <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css"
- rel="stylesheet"> @endsection @section('js')
+ rel="stylesheet"> 
+@endsection
+ 
+@section('js')
 <script type="text/javascript">
 	$(function () {
                 $('#datetimepicker1').datetimepicker();
@@ -11,7 +15,9 @@
 
 <script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
 
-@endsection @section('main')
+@endsection
+
+@section('main')
 <!--thiet ke form html nhap cong viec (request)-->
 <div class="row">
 	<h3>Thêm yêu cầu</h3>
@@ -69,9 +75,7 @@
 			<textarea id="noidung" name="noidung" class="form-control" required></textarea>
 		</div>
 	</form>
-	<script type="text/javascript">
-		var editor = CKEDITOR.replace('noidung',{language:'vi'});
-	</script>
+	
 
 	<form class="form-horizontal">
 		<div class="col-sm-10">

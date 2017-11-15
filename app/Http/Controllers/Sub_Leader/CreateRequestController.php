@@ -9,11 +9,11 @@ class CreateRequestController extends Controller
 {
     public function index_hn()
     {
-        return view('database_manager.request.leader.new_subleader_hn');
+        return view('database_manager.request.sub_leader.new_subleader_hn');
     }
     
     public function index_dn()
     {
-        return view('database_manager.request.leader.new_subleader_dn');
+        return view('database_manager.request.sub_leader.new_subleader_dn');
     }
 }

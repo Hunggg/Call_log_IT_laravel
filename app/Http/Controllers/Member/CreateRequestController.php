@@ -9,11 +9,11 @@ class CreateRequestController extends Controller
 {
     public function index_hn()
     {
-        return view('database_manager.request.leader.new_member_hn');
+        return view('database_manager.request.member.new_member_hn');
     }
     
     public function index_dn()
     {
-        return view('database_manager.request.leader.new_member_dn');
+        return view('database_manager.request.member.new_member_dn');
     }
 }

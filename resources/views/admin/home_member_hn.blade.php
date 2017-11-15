@@ -5,7 +5,7 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <button href="{{route('crequest_member_hn')}}" type="button" class="btn btn-danger">Create request</button>
+                                <a href="{{route('crequest_member_hn')}}" class="btn btn-danger" id="addrequest">Create request</a>
                                
                             </div>
                             <!-- /input-group -->
