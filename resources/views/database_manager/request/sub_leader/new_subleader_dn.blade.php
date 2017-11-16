@@ -3,19 +3,7 @@
 <!--link css only page here-->
 
 <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css"
- rel="stylesheet"> @endsection @section('js')
-<script type="text/javascript">
-	$(function () {
-                $('#datetimepicker').datetimepicker({
-   			format:'DD/MM/YYYY HH:mm:ss'
-});
-            });
-
-</script>
-
-<script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
-
-@endsection @section('main')
+ rel="stylesheet"> @endsection @section('main')
 <!--thiet ke form html nhap cong viec (request)-->
 <div class="row">
 	<h3>Thêm yêu cầu</h3>
@@ -72,19 +60,24 @@
 			<br/>
 			<textarea id="noidung" name="noidung" class="form-control" required></textarea>
 		</div>
-	</form>
+
+	
 
 
-	<form class="form-horizontal">
-		<div class="col-sm-10">
-			<input type="text" class="form-control" id="uploadfile" placeholder="choose file to upload">
+
+	
+		<div class="form-group col-sm-10">
+			<input type="file" class="filestyle form-control" id="uploadfile" placeholder="choose file to upload">
 		</div>
-		<button class="btn btn-primary">Choose File</button>
-	</form>
-	<hr>
-	<form>
-		<input type="submit" class="btn btn-info" value="Gửi yêu cầu">
-		<button type="button">Hủy bỏ</button>
+		
+	
+	
+	<div class="form-group col-md-12">
+	    <input type="submit" class="btn btn-info" value="Gửi yêu cầu">
+		<a href="#" class="btn btn-danger">Hủy bỏ</a>
+	</div>
+	
+		
 	</form>
 </div>
 

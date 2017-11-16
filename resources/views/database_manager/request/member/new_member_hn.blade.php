@@ -72,19 +72,24 @@
 			<br/>
 			<textarea id="noidung" name="noidung" class="form-control" required></textarea>
 		</div>
-	</form>
+
+	
 
 
-	<form class="form-horizontal">
-		<div class="col-sm-10">
-			<input type="text" class="form-control" id="uploadfile" placeholder="choose file to upload">
+
+	
+		<div class="form-group col-sm-10">
+			<input type="file" class="filestyle form-control" id="uploadfile" placeholder="choose file to upload">
 		</div>
-		<button class="btn btn-primary">Choose File</button>
-	</form>
-	<hr>
-	<form>
-		<input type="submit" class="btn btn-info" value="Gửi yêu cầu">
-		<button type="button">Hủy bỏ</button>
+		
+	
+	
+	<div class="form-group col-md-12">
+	    <input type="submit" class="btn btn-info" value="Gửi yêu cầu">
+		<a href="#" class="btn btn-danger">Hủy bỏ</a>
+	</div>
+	
+		
 	</form>
 </div>
 
