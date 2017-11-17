@@ -9,7 +9,10 @@
 });
             });
 
+	CKEDITOR.replace( 'noidung' );
+
 </script>
+
 
 <script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
 
@@ -20,7 +23,7 @@
 	<hr/>
 
 	<form action="{{route('crequest_leader_dn')}}" method="post" enctype="multipart/form-data">
-	{{csrf_field()}}
+		{{csrf_field()}}
 		<div class="form-group col-md-12">
 			<label for="Tencongviec">Tên công việc</label>
 			<input type="text" class="form-control" id="" placeholder="Tên công việc" name="subject" required>
@@ -71,23 +74,23 @@
 			<textarea id="noidung" name="content" class="form-control" required></textarea>
 		</div>
 
-	
 
 
 
-	
+
+
 		<div class="form-group col-sm-10">
 			<input name="file-anh" type="file" class="filestyle form-control" id="uploadfile" placeholder="choose file to upload">
 		</div>
-		
-	
-	
-	<div class="form-group col-md-12">
-	    <input type="submit" class="btn btn-info" value="Gửi yêu cầu">
-		<a href="{{route('leader_dn')}}" class="btn btn-danger">Hủy bỏ</a>
-	</div>
-	
-		
+
+
+
+		<div class="form-group col-md-12">
+			<input type="submit" class="btn btn-info" value="Gửi yêu cầu">
+			<a href="{{route('leader_dn')}}" class="btn btn-danger">Hủy bỏ</a>
+		</div>
+
+
 	</form>
 </div>
 
