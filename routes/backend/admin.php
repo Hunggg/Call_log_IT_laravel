@@ -20,6 +20,8 @@
                 //2 click job in C4 -> edit->........
                 //3 click job in C5 -> edit->.......
                 Route::get('tao-yeu-cau','Leader\CreateRequestController@index_hn')->name('crequest_leader_hn');
+                Route::post('tao-yeu-cau','Leader\CreateRequestController@create_hn')->name('crequest_leader_hn');
+                
                 Route::get('list-toi-yeu-cau','Leader\ShowIndividualRequestController@index_hn')->name('srequest_indi_leader_hn');
                 Route::get('list-cong-viec-lien-quan','Leader\ShowRelevantRequestController@index_hn')->name('srequest_relev_leader_hn');
                 Route::get('list-cong-viec-cua-team','Leader\ShowTeamRequestController@index_hn')->name('srequest_team_leader_hn');
@@ -30,6 +32,8 @@
                 Route::get('/','Leader\LeaderController@index_dn')->name('leader_dn');
                 // code Route leader DaNang here
                 Route::get('tao-yeu-cau','Leader\CreateRequestController@index_dn')->name('crequest_leader_dn');
+                Route::post('tao-yeu-cau','Leader\CreateRequestController@create_dn')->name('crequest_leader_dn');
+                
                 Route::get('list-toi-yeu-cau','Leader\ShowIndividualRequestController@index_dn')->name('srequest_indi_leader_dn');
                 Route::get('list-cong-viec-lien-quan','Leader\ShowRelevantRequestController@index_dn')->name('srequest_relev_leader_dn');
                 Route::get('list-cong-viec-cua-team','Leader\ShowTeamRequestController@index_dn')->name('srequest_team_leader_dn');

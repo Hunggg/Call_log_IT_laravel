@@ -19,21 +19,21 @@
 	<h3>Thêm yêu cầu</h3>
 	<hr/>
 
-	<form action="">
+	<form action="{{route('crequest_leader_dn')}}" method="post" enctype="multipart/form-data">
+	{{csrf_field()}}
 		<div class="form-group col-md-12">
 			<label for="Tencongviec">Tên công việc</label>
-			<input type="text" class="form-control" id="" placeholder="Tên công việc" name="tencongviec" required>
+			<input type="text" class="form-control" id="" placeholder="Tên công việc" name="subject" required>
 		</div>
 
 		<div class="form-group col-md-6">
 			<label for="Mucdouutien">Mức độ ưu tiên</label>
 			<br>
-			<select name="Mucdouutien" id="mucdouutien" class="form-control">
-				<option value="">Thấp</option>
-				<option value="" selected>Bình thường</option>
-				<option value="">Cao</option>
-				<option value="">Cao</option>
-				<option value="">Khẩn cấp</option>
+			<select name="priority" id="priority" class="form-control">
+				<option value="1">Thấp</option>
+				<option value="2" selected>Bình thường</option>
+				<option value="3">Cao</option>
+				<option value="4">Khẩn cấp</option>
 			</select>
 		</div>
 
@@ -41,7 +41,7 @@
 			<label for="ngayhethan">Ngày hết hạn</label>
 			<div class="form-group">
 				<div class="input-group date" id="datetimepicker">
-					<input type="text" class="form-control" required/>
+					<input type="text" class="form-control" name="deadline" required/>
 					<span class="input-group-addon">
 						<span class="glyphicon glyphicon-calendar"></span>
 					</span>
@@ -53,22 +53,22 @@
 		<div class="form-group col-md-6">
 			<label for="bophanit">Bộ phận IT</label>
 			<br>
-			<select name="bophanit" id="bophanit" class="form-control">
-				<option value="">Hanoi-IT</option>
-				<option value="">Đà Nẵng-IT</option>
+			<select name="team_id" id="bophanit" class="form-control">
+				<option value="1">Hanoi-IT</option>
+				<option value="2">Đà Nẵng-IT</option>
 			</select>
 		</div>
 
 		<div class="form-group col-md-6">
 			<label for="nguoilienquan">Người liên quan</label>
 			<br>
-			<input type="text" name="nguoilienquan" id="nguoilienquan" class="form-control" />
+			<input type="text" name="nguoi_lien_quan" id="nguoilienquan" class="form-control" />
 		</div>
 
 		<div class="form-group col-md-12">
 			<label for="noidung">Nội dung</label>
 			<br/>
-			<textarea id="noidung" name="noidung" class="form-control" required></textarea>
+			<textarea id="noidung" name="content" class="form-control" required></textarea>
 		</div>
 
 	
@@ -77,14 +77,14 @@
 
 	
 		<div class="form-group col-sm-10">
-			<input type="file" class="filestyle form-control" id="uploadfile" placeholder="choose file to upload">
+			<input name="file-anh" type="file" class="filestyle form-control" id="uploadfile" placeholder="choose file to upload">
 		</div>
 		
 	
 	
 	<div class="form-group col-md-12">
 	    <input type="submit" class="btn btn-info" value="Gửi yêu cầu">
-		<a href="#" class="btn btn-danger">Hủy bỏ</a>
+		<a href="{{route('leader_dn')}}" class="btn btn-danger">Hủy bỏ</a>
 	</div>
 	
 		
