@@ -19,7 +19,7 @@
 @endsection @section('main')
 <!--thiet ke form html nhap cong viec (request)-->
 <div class="row">
-	<h3>Thêm yêu cầu</h3>
+	<h3>Thêm yêu cầu</h3>	
 	<hr/>
 
 	<form action="{{route('crequest_leader_dn')}}" method="post" enctype="multipart/form-data">
@@ -50,7 +50,6 @@
 					</span>
 				</div>
 			</div>
-
 		</div>
 
 		<div class="form-group col-md-6">
@@ -73,9 +72,6 @@
 			<br/>
 			<textarea id="noidung" name="content" class="form-control" required></textarea>
 		</div>
-
-
-
 
 
 

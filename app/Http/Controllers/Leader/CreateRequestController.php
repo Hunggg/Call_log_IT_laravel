@@ -36,9 +36,44 @@ class CreateRequestController extends Controller
         return view('database_manager.request.leader.new_leader_hn');
     }
     
-    public function create_hn()
+    public function create_hn(Request $request)
     {
-        
+         //them info nhap tren web
+         $tickets = new tickets;
+         $tickets->subject = $request->subject;
+         $tickets->priority_id = $request->priority;
+         $tickets->deadline = $request->deadline;
+         $tickets->team_id = $request->team_id;
+         $tickets->nguoi_lien_quan = $request->nguoi_lien_quan;
+         $tickets->content = $request->content;
+         
+         //them info keo theo mac dinh
+         $tickets->created_by = Auth::user()->id;
+         $tickets->assigned_to_id = 8;//cho luon thang id ben users cho nhanh cai nay fix sau 
+         $tickets->status_id = 1;//mac dinh la new
+         $tickets->rating_id = 1;//co 3 trang thai mac dinh la  khog co danh gia
+         $tickets->save();
+         
+         
+         //xu ly url anh va save anh
+         $id = $tickets->id;
+         $subject = $tickets->subject;
+         $tickets_fix = tickets::find($id);
+         $text = $id.$this->stripVN($subject);
+         $text_fix = substr($text,0,45);
+         
+         if($request->hasFile('file-anh')){
+           $logo = $request->file('file-anh');
+             //set name + phan mo rong nhu jps, png
+                $logo_name = $text_fix.'.'.$logo->getClientOriginalExtension();
+             
+                $tickets_fix->url_image = 'storage/app/public/file_anh/'.$logo_name;
+                $logo->move('storage/app/public/file_anh', $logo_name);
+         }
+         
+         $tickets_fix->save();
+         
+         return Redirect::back();
     }
     
     public function create_dn(Request $request)
