@@ -20,6 +20,7 @@
         <th>Người thực hiện</th>
         <th>Ngày hết hạn</th>
         <th>Trạng thái</th>
+        <th>Chi tiết</th>
       </tr>
     </thead>
     <tbody>
@@ -33,6 +34,7 @@
               <td>{{$data->employee_assi}}</td>
               <td>{{$data->deadline}}</td>
               <td>{{$data->status}}</td>
+              <td class="center"><a href="{{ route('edit_subleader_dn', $data->id)  }}"><span class="fa fa-pencil-square"></span></a></td>
           </tr>
       @endforeach
     </tbody>

@@ -49,7 +49,7 @@ class CreateRequestController extends Controller
          
          //them info keo theo mac dinh
          $tickets->created_by = Auth::user()->id;
-         $tickets->assigned_to_id = 8;//cho luon thang id ben users cho nhanh cai nay fix sau 
+         $tickets->assigned_to_id = 7;//cho luon thang id ben users cho nhanh cai nay fix sau 
          $tickets->status_id = 1;//mac dinh la new
          $tickets->rating_id = 1;//co 3 trang thai mac dinh la  khog co danh gia
          $tickets->save();

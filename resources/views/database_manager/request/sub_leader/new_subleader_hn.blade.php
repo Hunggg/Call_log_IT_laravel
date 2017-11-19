@@ -1,4 +1,4 @@
-@extends('admin.home_sub_leader_hn') @section('css')
+@extends('admin.home_subleader_hn') @section('css')
 <!--link css only page here-->
 <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css"
  rel="stylesheet"> @endsection @section('js')
@@ -22,7 +22,7 @@
 	<h3>Thêm yêu cầu</h3>	
 	<hr/>
 
-	<form action="{{route('crequest_sub_leader_hn')}}" method="post" enctype="multipart/form-data">
+	<form action="{{route('crequest_subleader_hn')}}" method="post" enctype="multipart/form-data">
 		{{csrf_field()}}
 		<div class="form-group col-md-12">
 			<label for="Tencongviec">Tên công việc</label>
