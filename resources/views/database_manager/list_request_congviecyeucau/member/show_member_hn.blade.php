@@ -8,9 +8,9 @@
 
 
 @section('main')
-<!--thiet ke form html nhap cong viec (request)-->
-<p>thiet ke form html nhap cong viec (request)</p>
-<table class="table">
+<div>
+    <div>
+    <table class="table">
     <thead>
       <tr>
         <th>STT</th>
@@ -23,35 +23,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>aaaa</td>
-      </tr>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>aaaa</td>
-      </tr>
-      <tr>
-       <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>aaaa</td>
-      </tr>
+      
+      @foreach($indi_data as $key => $data)
+          <tr>
+              <td>{{ $key + 1 }}</td>
+              <td>{{$data->subject}}</td>
+              <td>{{$data->priority}}</td>
+              <td>{{$data->employee_cre}}</td>
+              <td>{{$data->employee_assi}}</td>
+              <td>{{$data->deadline}}</td>
+              <td>{{$data->status}}</td>
+          </tr>
+      @endforeach
     </tbody>
   </table>
+</div>
+{!! $indi_data->appends(request()->input())->links() !!}
+</div>
 @endsection
 
 
