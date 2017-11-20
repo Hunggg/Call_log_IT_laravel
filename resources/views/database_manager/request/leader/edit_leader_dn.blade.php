@@ -48,7 +48,23 @@
 </div>
 <hr>
 <div>
-	casi nay la phan cmt
+	cái này là phần hiển thị nội dung công việc
+	<h4>Nội dung</h4>
+	<hr> tên người tạo
+	<br> ngày tháng năm tạo
+	<br> nội dung của công việc
+</div>
+<hr>
+<div>
+	cái này là comment
+
+	<div class="form-group">
+		<label for="binhluan">Bình luận</label>
+		<br/>
+		<textarea id="binhluan" name="content" class="form-control" required></textarea>
+	</div>
+
+	<input type="submit" value="gửi bình luận">
 </div>
 
 
@@ -69,10 +85,6 @@
 
 					<form action="{{route('crequest_leader_dn')}}" method="post" enctype="multipart/form-data">
 						{{csrf_field()}}
-						<div class="form-group col-md-12">
-							<label for="Tencongviec">Tên công việc</label>
-							<input type="text" class="form-control" id="" placeholder="Tên công việc" name="subject" required>
-						</div>
 
 						<div class="form-group col-md-6">
 							<label for="Mucdouutien">Mức độ ưu tiên</label>
@@ -112,25 +124,36 @@
 							<input type="text" name="nguoi_lien_quan" id="nguoilienquan" class="form-control" />
 						</div>
 
-						<div class="form-group col-md-12">
-							<label for="noidung">Nội dung</label>
-							<br/>
-							<textarea id="noidung" name="content" class="form-control" required></textarea>
+						<div class="form-group col-md-6">
+							<label for="assign">Assign</label>
+							<br>
+							<select name="assign" id="assign" class="form-control">
+								<option value="2">nhân viên 1</option>
+								<option value="3">nhân viên 2</option>
+								<option value="4">nhân viên 3</option>
+								<option value="5">nhân viên 4</option>
+							</select>
 						</div>
 
-
-
-						<div class="form-group col-sm-10">
-							<input name="file-anh" type="file" class="filestyle form-control" id="uploadfile" placeholder="choose file to upload">
-						</div>
-
+						<div class="form-group col-md-6">
+								<label for="trangthai">Thay đổi trạng thái</label>
+								<br>
+								<select name="trangthai" id="trangthai" class="form-control">
+									<option value="2">New</option>
+									<option value="3">Inprogress</option>
+									<option value="4"> Resolved</option>
+									<option value="5">Feedback</option>
+									<option value="6"> Closed</option>
+									<option value="7">Cancelled</option>
+								</select>
+							</div>
 					</form>
 				</div>
 			</div>
 
 			<!-- Modal footer -->
 			<div class="modal-footer">
-                <input type="submit" class="btn btn-info" value="Gửi yêu cầu">
+				<input type="submit" class="btn btn-info" value="Lưu thay đổi">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			</div>
 
@@ -141,12 +164,11 @@
 @endsection @section('js')
 <script type="text/javascript">
 	$(function () {
-                $('#datetimepicker').datetimepicker({
-   			format:'DD/MM/YYYY HH:mm:ss'
-    });
-            });
+		$('#datetimepicker').datetimepicker({
+			format: 'DD/MM/YYYY HH:mm:ss'
+		});
+	});
 
-	CKEDITOR.replace( 'noidung' );
-
+	CKEDITOR.replace('binhluan');
 </script>
 @endsection
