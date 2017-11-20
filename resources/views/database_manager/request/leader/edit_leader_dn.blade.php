@@ -3,9 +3,9 @@
 	.btn {
 		margin: 1px;
 	}
-
-	<link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
 </style>
+	<link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
+
 @endsection @section('main')
 <!--tiep tuc lam front end -->
 <div class="row">
