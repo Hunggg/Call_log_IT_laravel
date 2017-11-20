@@ -8,5 +8,5 @@ class ticket_thread extends Model
 {
     protected $table = 'ticket_thread';
     
-    public $timestamps = false;
+    
 }

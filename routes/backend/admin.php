@@ -40,6 +40,9 @@
                 Route::get('sua/{id}','Leader\EditController@index_dn')->name('edit_leader_dn');
                 Route::post('sua/{id}','Leader\EditController@edit_dn')->name('edit_leader_dn');
                 
+                Route::post('sua/{id}/ajax','Leader\EditController@ajax');
+                Route::post('sua/{id}/comment-ajax','Leader\EditController@comment_ajax');
+                
                 Route::get('list-toi-yeu-cau','Leader\ShowIndividualRequestController@index_dn')->name('srequest_indi_leader_dn');
                 Route::get('list-cong-viec-lien-quan','Leader\ShowRelevantRequestController@index_dn')->name('srequest_relev_leader_dn');
                 Route::get('list-cong-viec-cua-team','Leader\ShowTeamRequestController@index_dn')->name('srequest_team_leader_dn');

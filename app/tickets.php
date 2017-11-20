@@ -8,5 +8,5 @@ class tickets extends Model
 {
     protected $table = 'tickets';
     
-    public $timestamps = false;
+    
 }
