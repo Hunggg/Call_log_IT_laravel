@@ -86,7 +86,7 @@ class EditController extends Controller
             $ticket_th->tickets_id = $request->ticket;
             
             $ticket_th->save();
-            
+            //chua check id cua cai comment day se sua sau 
             $ticket_th_data = ticket_thread::join('users','ticket_thread.users_id','=','users.id')->select('users.employee_name as employee','content','ticket_thread.created_at as created_at')->get();
             
             $text = '';
