@@ -65,12 +65,14 @@
 		<span class="glyphicon glyphicon-globe col-md-1"></span>
 		<p id="tieude1">{{ $edit_data->subject }}</p>
 	</div>
+	@if($check_status == false)
 	<div class="col-md-3">
 		<button id="button-style" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
 			Change Data
 		</button>
 
 	</div>
+	@endif
 	<hr>
 	<div class="hienthi">
 		<div class="col-md-4">
@@ -299,7 +301,7 @@
                 
             });
         });
-        $('#comment').change(function(){
+        $('#comment_vl').change(function(){
             
             var valuecmt = $(this).val();
             

@@ -60,7 +60,7 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Việc tôi được giao<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                <li>
-                                    <a class="glyphicon glyphicon-tasks" href="flot.html">    All</a>
+                                    <a class="glyphicon glyphicon-tasks" href="{{route('srequest_assi_member_dn')}}">    All</a>
                                 </li>
                                 <li>
                                     <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>

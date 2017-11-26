@@ -46,6 +46,7 @@
                 Route::get('list-toi-yeu-cau','Leader\ShowIndividualRequestController@index_dn')->name('srequest_indi_leader_dn');
                 Route::get('list-cong-viec-lien-quan','Leader\ShowRelevantRequestController@index_dn')->name('srequest_relev_leader_dn');
                 Route::get('list-cong-viec-cua-team','Leader\ShowTeamRequestController@index_dn')->name('srequest_team_leader_dn');
+               
             });
           
         });
@@ -98,6 +99,7 @@
                 
                 Route::get('list-toi-yeu-cau','Member\ShowIndividualRequestController@index_hn')->name('srequest_indi_member_hn');
                 Route::get('list-cong-viec-lien-quan','Member\ShowRelevantRequestController@index_hn')->name('srequest_relev_member_hn');
+                Route::get('list-toi-duoc-giao','Member\ShowAssignRequestController@index_hn')->name('srequest_assi_member_hn');
             });
            /* Route subleader DN */
             Route::group(['prefix'=>'DaNang','middleware'=>'it_dn'], function(){
@@ -111,6 +113,7 @@
                 
                 Route::get('list-toi-yeu-cau','Member\ShowIndividualRequestController@index_dn')->name('srequest_indi_member_dn');
                 Route::get('list-cong-viec-lien-quan','Member\ShowRelevantRequestController@index_dn')->name('srequest_relev_member_dn');
+                Route::get('list-toi-duoc-giao','Member\ShowAssignRequestController@index_dn')->name('srequest_assi_member_dn');
             });
                
           

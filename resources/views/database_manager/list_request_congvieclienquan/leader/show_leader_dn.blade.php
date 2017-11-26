@@ -2,8 +2,9 @@
 <!--link css only page here-->
 
 @endsection @section('main')
-<!--thiet ke form html nhap cong viec (request)-->
-<p>thiet ke form html nhap cong viec (request)</p>
+
+<div>
+<div>
 <table class="table">
 	<thead>
 		<tr>
@@ -16,6 +17,7 @@
 			<th>Trạng thái</th>
 		</tr>
 	</thead>
+	<tbody>
 	@foreach($indi_data as $key => $data)
 	<tr>
 		<td>{{ $key + 1 }}</td>

@@ -26,7 +26,7 @@ class EditController extends Controller
         
         
         
-        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content')->where('tickets.id','=',$id)->first();
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
         
         $priority = priority::get();
         $status = status::get();
@@ -39,7 +39,12 @@ class EditController extends Controller
         }
         //dd($data);
         //echo $data->created_at;
-        return view('database_manager.request.leader.edit_leader_dn')->with(['edit_data'=>$data,'priority_data'=>$priority,'status_data'=>$status,'users_data'=>$users,'team_data'=>$team,'id_user'=>$id_user]);
+        if($data->status_id == 3 || $data->status_id == 5 || $data->status_id == 6){
+            $disabled = true;
+        }else {
+            $disabled = false;
+        }
+        return view('database_manager.request.leader.edit_leader_dn')->with(['edit_data'=>$data,'priority_data'=>$priority,'status_data'=>$status,'users_data'=>$users,'team_data'=>$team,'id_user'=>$id_user,'check_status'=>$disabled]);
     }
     public function edit_hn()
     {
@@ -56,6 +61,30 @@ class EditController extends Controller
         $edit->status_id = $request->trangthai;
         $edit->priority_id = $request->priority;
         $edit->save();
+        
+         $id_user = Auth::user()->id; 
+        
+        
+        
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        
+        $priority = priority::get();
+        $status = status::get();
+        $users = users::get(); 
+        $team = team::get();
+        if($data->team_id == 1){
+            $data->team_id = 'Hà Nội IT';
+        }else{
+            $data->team_id = 'Đà Nẵng IT';
+        }
+        //dd($data);
+        //echo $data->created_at;
+        if($data->status_id == 3 || $data->status_id == 5 || $data->status_id == 6){
+            $disabled = true;
+        }else {
+            $disabled = false;
+        }
+        return view('database_manager.request.leader.edit_leader_dn')->with(['edit_data'=>$data,'priority_data'=>$priority,'status_data'=>$status,'users_data'=>$users,'team_data'=>$team,'id_user'=>$id_user,'check_status'=>$disabled]);
         
     }
     public function ajax(Request $request)
@@ -87,7 +116,7 @@ class EditController extends Controller
             
             $ticket_th->save();
             //chua check id cua cai comment day se sua sau 
-            $ticket_th_data = ticket_thread::join('users','ticket_thread.users_id','=','users.id')->select('users.employee_name as employee','content','ticket_thread.created_at as created_at')->get();
+            $ticket_th_data = ticket_thread::join('users','ticket_thread.users_id','=','users.id')->join('tickets','ticket_thread.tickets_id','=','tickets.id')->select('users.employee_name as employee','ticket_thread.content as content','ticket_thread.created_at as created_at')->where('tickets.id','=',$request->ticket)->get();
             
             $text = '';
             foreach($ticket_th_data as $item){

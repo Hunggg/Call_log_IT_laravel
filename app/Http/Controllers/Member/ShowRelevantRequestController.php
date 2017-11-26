@@ -19,7 +19,7 @@ class ShowRelevantRequestController extends Controller
         
         $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status')->where('a.id','=',$id)->orwhere('b.id','=',$id)->paginate(10);
         
-        return view('database_manager.list_request_congviecyeucau.leader.show_member_hn')->with([
+        return view('database_manager.list_request_congvieclienquan.member.show_member_hn')->with([
             'indi_data' => $data
         ]);
     }
@@ -32,7 +32,7 @@ class ShowRelevantRequestController extends Controller
         
         
        
-        return view('database_manager.list_request_congviecyeucau.leader.show_member_dn')->with([
+        return view('database_manager.list_request_congvieclienquan.member.show_member_dn')->with([
             'indi_data' => $data
         ]);
     }
