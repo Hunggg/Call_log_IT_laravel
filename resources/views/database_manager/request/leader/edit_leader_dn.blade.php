@@ -166,22 +166,26 @@
 		<br/>
 		
 		<select id="comment_vl" class="form-control">
-
-			<option value="0" selected>Comment Bình thường</option>
+            <option value="" selected>Chọn loại comment</option>
+			<option value="0">Comment Bình thường</option>
 			<option value="1">Comment Đánh giá</option>
 			<option value="2">Comment thay đổi mức độ ưu tiên</option>
 			<option value="3">Comment thay đổi deadline</option>
 		</select>
 		<br>
 		<!---->
-
-		<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10"></textarea>
+        <div id="showtextarea">
+            <!--textarea-->
+        </div>
+		<!--<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10" style="display: none;"></textarea>-->
 
 	</div>
-	<button id="comment" class="btn btn-primary" type="submit">Gửi Bình Luận</button>
+	<button id="comment" class="btn btn-primary" type="submit" style="display: none;">Gửi Bình Luận</button>
 
 </form>
-
+<br>
+<br>
+<br>
 
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
@@ -321,27 +325,34 @@
         });
         $('#comment_vl').change(function(){
             
+            /*$('#binhluan2').show();*/
+            $('#comment').show();
+            $('#showtextarea').empty();
             var valuecmt = $(this).val();
             
             if(valuecmt == 0){
-                $('#binhluan2').value = '';
-                $('#binhluan2').html('');
+                //$('#binhluan2').value = '';
+                //$('#binhluan2').html('');
+                $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10"></textarea>');
                 //CKEDITOR.replace('binhluan');
                 
             }
             if(valuecmt == 1){
-                $('#binhluan2').value = '';
-                $('#binhluan2').html('Đánh giá:');
+                //$('#binhluan2').value = '';
+                //$('#binhluan2').html('Đánh giá:');
+                $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Đánh giá:</textarea>');
                 //CKEDITOR.replace('binhluan').setData('Đánh giá:');
             }
             if(valuecmt == 2){
-                $('#binhluan2').value = '';
-                 $('#binhluan2').html('Mức độ ưu tiên:{{$edit_data->priority}}=>');
+               // $('#binhluan2').value = '';
+               //  $('#binhluan2').html('Mức độ ưu tiên:{{$edit_data->priority}}=>');
+                $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Mức độ ưu tiên:{{$edit_data->priority}}=></textarea>');
                 //CKEDITOR.replace('binhluan').setData('Mức độ ưu tiên:{{$edit_data->priority}}=>');
             }
             if(valuecmt == 3){
-                $('#binhluan2').value = '';
-                 $('#binhluan2').html('Thay đổi deadline:{{$edit_data->deadline}}=>');
+                //$('#binhluan2').value = '';
+                // $('#binhluan2').html('Thay đổi deadline:{{$edit_data->deadline}}=>');
+                $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Thay đổi deadline:{{$edit_data->deadline}}=></textarea>');
                 //CKEDITOR.replace('binhluan').setData('Thay đổi deadline:{{$edit_data->deadline}}=>');
             }
         });
@@ -350,6 +361,8 @@
             e.preventDefault();
            /*alert($(this).val());*/
             $('#result-comment-mysql').hide();
+            $('#comment').hide();
+            $('#binhluan2').value = '';
             var binhluan = $('#binhluan2').val();
             var user = {{$id_user}};
             var ticket = {{$edit_data->id}};
@@ -369,6 +382,7 @@
                 },
                 
             });
+            $('#showtextarea').empty();
         });
     });
 
