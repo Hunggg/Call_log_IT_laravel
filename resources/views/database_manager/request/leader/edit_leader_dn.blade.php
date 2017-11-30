@@ -134,9 +134,13 @@
 <br>
 <br>
 
+
+
+
+<!--chu ý phần này hộ cái nhé-->
 <div class="row" id="result-comment-mysql">
 	<div class="form-group">
-		<!--comment mysql result-->
+		<!--comment mysql result dữ liệu trước khi nhấn nút bình luận và khi nhấn bình luận cái này sẽ hide đi-->
 		@foreach($comment_data as $item)
 		<label>{{$item->employee}}</label><br>
                 <div>
@@ -151,13 +155,25 @@
 	</div>
 </div>
 
+
 <div class="row">
 	<div id="result-comment" class="form-group">
-		<!--comment ajax result-->
+		<!--comment ajax result sau khi bình luận xong cái này sẽ suất hiện 1 list danh giống như ở trên kèm theo cái bình luận vừa submit. theo ajax để tránh bị trùng nên tôi đã hide phần trên-->
 	</div>
 </div>
 <br>
 <br>
+
+
+
+<!---->
+
+
+
+
+
+
+
 <form action="" method="post" enctype="multipart/form-data">
 	{{csrf_field()}}
 
@@ -173,11 +189,11 @@
 			<option value="3">Comment thay đổi deadline</option>
 		</select>
 		<br>
-		<!---->
+		<!--phần này sẽ chạy trpng jquery ở duwosi-->
         <div id="showtextarea">
             <!--textarea-->
         </div>
-		<!--<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10" style="display: none;"></textarea>-->
+		
 
 	</div>
 	<button id="comment" class="btn btn-primary" type="submit" style="display: none;">Gửi Bình Luận</button>
@@ -325,41 +341,37 @@
         });
         $('#comment_vl').change(function(){
             
-            /*$('#binhluan2').show();*/
+            
             $('#comment').show();
             $('#showtextarea').empty();
             var valuecmt = $(this).val();
             
             if(valuecmt == 0){
-                //$('#binhluan2').value = '';
-                //$('#binhluan2').html('');
+                
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10"></textarea>');
-                //CKEDITOR.replace('binhluan');
+               
                 
             }
             if(valuecmt == 1){
-                //$('#binhluan2').value = '';
-                //$('#binhluan2').html('Đánh giá:');
+                
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Đánh giá:</textarea>');
-                //CKEDITOR.replace('binhluan').setData('Đánh giá:');
+                
             }
             if(valuecmt == 2){
-               // $('#binhluan2').value = '';
-               //  $('#binhluan2').html('Mức độ ưu tiên:{{$edit_data->priority}}=>');
+               
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Mức độ ưu tiên:{{$edit_data->priority}}=></textarea>');
-                //CKEDITOR.replace('binhluan').setData('Mức độ ưu tiên:{{$edit_data->priority}}=>');
+                
             }
             if(valuecmt == 3){
-                //$('#binhluan2').value = '';
-                // $('#binhluan2').html('Thay đổi deadline:{{$edit_data->deadline}}=>');
+                
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Thay đổi deadline:{{$edit_data->deadline}}=></textarea>');
-                //CKEDITOR.replace('binhluan').setData('Thay đổi deadline:{{$edit_data->deadline}}=>');
+                
             }
         });
         
         $('#comment').click(function(e){
             e.preventDefault();
-           /*alert($(this).val());*/
+           
             $('#result-comment-mysql').hide();
             $('#comment').hide();
             $('#binhluan2').value = '';

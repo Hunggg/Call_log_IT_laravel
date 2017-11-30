@@ -9,6 +9,10 @@ use App\status;
 use App\priority;
 use App\rating;
 use App\users;
+use App\team;
+use App\ticket_thread;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 class EditController extends Controller
 {
     public function index_hn($id)
@@ -24,6 +28,16 @@ class EditController extends Controller
         
     }
     public function edit_dn()
+    {
+        
+    }
+    //ajax lua chon bo phan it xuat hien cai list selected o duoi cai modal giong ben leader DN 
+    public function ajax(Request $request)
+    {
+        
+    }
+    //ajax comment ko phai load lai trang
+    public function comment_ajax(Request $request)
     {
         
     }
