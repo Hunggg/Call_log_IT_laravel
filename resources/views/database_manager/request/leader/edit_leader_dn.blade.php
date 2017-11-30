@@ -134,6 +134,23 @@
 <br>
 <br>
 
+<div class="row" id="result-comment-mysql">
+	<div class="form-group">
+		<!--comment mysql result-->
+		@foreach($comment_data as $item)
+		<label>{{$item->employee}}</label><br>
+                <div>
+                    <p class="glyphicon glyphicon-time">{{$item->created_at}}</p>
+                </div>
+                <div class="col-md-12 shadow">
+                    <div class="fixingbox2 col-md-12">
+                                  <h6 class="col-md-12">{{$item->content}}</h6>
+                    </div>
+	           </div>
+	   @endforeach        
+	</div>
+</div>
+
 <div class="row">
 	<div id="result-comment" class="form-group">
 		<!--comment ajax result-->
@@ -147,6 +164,7 @@
 	<div class="form-group">
 		<label for="binhluan">Bình luận</label>
 		<br/>
+		
 		<select id="comment_vl" class="form-control">
 
 			<option value="0" selected>Comment Bình thường</option>
@@ -306,19 +324,23 @@
             var valuecmt = $(this).val();
             
             if(valuecmt == 0){
+                $('#binhluan2').value = '';
                 $('#binhluan2').html('');
                 //CKEDITOR.replace('binhluan');
                 
             }
             if(valuecmt == 1){
+                $('#binhluan2').value = '';
                 $('#binhluan2').html('Đánh giá:');
                 //CKEDITOR.replace('binhluan').setData('Đánh giá:');
             }
             if(valuecmt == 2){
+                $('#binhluan2').value = '';
                  $('#binhluan2').html('Mức độ ưu tiên:{{$edit_data->priority}}=>');
                 //CKEDITOR.replace('binhluan').setData('Mức độ ưu tiên:{{$edit_data->priority}}=>');
             }
             if(valuecmt == 3){
+                $('#binhluan2').value = '';
                  $('#binhluan2').html('Thay đổi deadline:{{$edit_data->deadline}}=>');
                 //CKEDITOR.replace('binhluan').setData('Thay đổi deadline:{{$edit_data->deadline}}=>');
             }
@@ -327,6 +349,7 @@
         $('#comment').click(function(e){
             e.preventDefault();
            /*alert($(this).val());*/
+            $('#result-comment-mysql').hide();
             var binhluan = $('#binhluan2').val();
             var user = {{$id_user}};
             var ticket = {{$edit_data->id}};

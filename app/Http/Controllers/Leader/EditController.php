@@ -44,7 +44,11 @@ class EditController extends Controller
         }else {
             $disabled = false;
         }
-        return view('database_manager.request.leader.edit_leader_dn')->with(['edit_data'=>$data,'priority_data'=>$priority,'status_data'=>$status,'users_data'=>$users,'team_data'=>$team,'id_user'=>$id_user,'check_status'=>$disabled]);
+        
+        //result comment mysql
+        $ticket_th_data = ticket_thread::join('users','ticket_thread.users_id','=','users.id')->join('tickets','ticket_thread.tickets_id','=','tickets.id')->select('users.employee_name as employee','ticket_thread.content as content','ticket_thread.created_at as created_at')->where('tickets.id','=',$id)->get();
+        
+        return view('database_manager.request.leader.edit_leader_dn')->with(['edit_data'=>$data,'priority_data'=>$priority,'status_data'=>$status,'users_data'=>$users,'team_data'=>$team,'id_user'=>$id_user,'check_status'=>$disabled,'comment_data'=>$ticket_th_data]);
     }
     public function edit_hn()
     {
@@ -84,7 +88,12 @@ class EditController extends Controller
         }else {
             $disabled = false;
         }
-        return view('database_manager.request.leader.edit_leader_dn')->with(['edit_data'=>$data,'priority_data'=>$priority,'status_data'=>$status,'users_data'=>$users,'team_data'=>$team,'id_user'=>$id_user,'check_status'=>$disabled]);
+        
+        //result comment mysql
+        $ticket_th_data = ticket_thread::join('users','ticket_thread.users_id','=','users.id')->join('tickets','ticket_thread.tickets_id','=','tickets.id')->select('users.employee_name as employee','ticket_thread.content as content','ticket_thread.created_at as created_at')->where('tickets.id','=',$id)->get();
+        
+        
+        return view('database_manager.request.leader.edit_leader_dn')->with(['edit_data'=>$data,'priority_data'=>$priority,'status_data'=>$status,'users_data'=>$users,'team_data'=>$team,'id_user'=>$id_user,'check_status'=>$disabled,'comment_data'=>$ticket_th_data]);
         
     }
     public function ajax(Request $request)
@@ -115,7 +124,9 @@ class EditController extends Controller
             $ticket_th->tickets_id = $request->ticket;
             
             $ticket_th->save();
-            //chua check id cua cai comment day se sua sau 
+            //lay id cua binh luan
+            $id_bl = $ticket_th->id;
+            
             $ticket_th_data = ticket_thread::join('users','ticket_thread.users_id','=','users.id')->join('tickets','ticket_thread.tickets_id','=','tickets.id')->select('users.employee_name as employee','ticket_thread.content as content','ticket_thread.created_at as created_at')->where('tickets.id','=',$request->ticket)->get();
             
             $text = '';
