@@ -196,7 +196,7 @@
 		
 
 	</div>
-	<button id="comment" class="btn btn-primary" type="submit">Gửi Bình Luận</button>
+	<button id="comment" class="btn btn-primary" type="submit" style="display: none">Gửi Bình Luận</button>
 
 </form>
 <br>
@@ -347,28 +347,29 @@
             var valuecmt = $(this).val();
             
 			if(valuecmt == ''){
-				$('#showtextarea').display = hide;
-				$('#comment').hide();
+				$('#showtextarea').css({"display": "none"});
+				$('#comment').css({"display": "none"});
+                //$("#myParagraph").css({"backgroundColor": "black", "color": "white"});
 			}
 
             if(valuecmt == 0){
-                
+                $('#showtextarea').css({"display": "true"});
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10"></textarea>');
                
                 
             }
             if(valuecmt == 1){
-                
+                $('#showtextarea').css({"display": "true"});
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Đánh giá:</textarea>');
                 
             }
             if(valuecmt == 2){
-               
+               $('#showtextarea').css({"display": "true"});
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Mức độ ưu tiên:{{$edit_data->priority}}=></textarea>');
                 
             }
             if(valuecmt == 3){
-                
+                $('#showtextarea').css({"display": "true"});
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Thay đổi deadline:{{$edit_data->deadline}}=></textarea>');
                 
             }
