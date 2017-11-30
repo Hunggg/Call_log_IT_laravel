@@ -3,7 +3,7 @@
 
 @endsection @section('main')
 <!--thiet ke form html nhap cong viec (request)-->
-<p>thiet ke form html nhap cong viec (request)</p>
+
 <table class="table">
 	<thead>
 		<tr>

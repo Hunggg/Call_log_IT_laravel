@@ -196,7 +196,7 @@
 		
 
 	</div>
-	<button id="comment" class="btn btn-primary" type="submit" style="display: none;">Gửi Bình Luận</button>
+	<button id="comment" class="btn btn-primary" type="submit">Gửi Bình Luận</button>
 
 </form>
 <br>
@@ -346,6 +346,11 @@
             $('#showtextarea').empty();
             var valuecmt = $(this).val();
             
+			if(valuecmt == ''){
+				$('#showtextarea').display = hide;
+				$('#comment').hide();
+			}
+
             if(valuecmt == 0){
                 
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10"></textarea>');
