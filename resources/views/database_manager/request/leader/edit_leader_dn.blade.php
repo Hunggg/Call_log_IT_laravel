@@ -182,7 +182,7 @@
 		<br/>
 		
 		<select id="comment_vl" class="form-control">
-            <option value="" selected>Chọn loại comment</option>
+            <option value="" selected disabled >Chọn loại comment</option>
 			<option value="0">Comment Bình thường</option>
 			<option value="1">Comment Đánh giá</option>
 			<option value="2">Comment thay đổi mức độ ưu tiên</option>
@@ -346,11 +346,6 @@
             $('#showtextarea').empty();
             var valuecmt = $(this).val();
             
-			if(valuecmt == ''){
-				$('#showtextarea').css({"display": "none"});
-				$('#comment').css({"display": "none"});
-                //$("#myParagraph").css({"backgroundColor": "black", "color": "white"});
-			}
 
             if(valuecmt == 0){
                 $('#showtextarea').css({"display": "true"});
