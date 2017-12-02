@@ -73,7 +73,7 @@
 
 	</div>
 	@endif
-	<hr>
+	
 	<div class="hienthi">
 		<div class="col-md-4">
 			<div>
