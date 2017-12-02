@@ -3,7 +3,7 @@
 
 @endsection @section('main')
 <!--thiet ke form html nhap cong viec (request)-->
-<p>thiet ke form html nhap cong viec (request)</p>
+
 <table class="table">
 	<thead>
 		<tr>
@@ -14,6 +14,7 @@
 			<th>Người thực hiện</th>
 			<th>Ngày hết hạn</th>
 			<th>Trạng thái</th>
+			<th>Chi tiết </th>
 		</tr>
 	</thead>
 	<tbody>

@@ -53,6 +53,8 @@
 		-1px -1px 2px #fff inset;
 		border-radius: 3px/6px;
 	}
+
+	
 </style>
 <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css"
  rel="stylesheet" /> @endsection @section('main')
@@ -78,7 +80,7 @@
 		<div class="col-md-4">
 			<div>
 				<b class="col-md-6">Ngày tạo:</b>
-			</div> {{ $edit_data->created_at }}
+			</div> {{ $edit_data->created_at -> format('d/m/Y')}}
 
 			<div>
 				<b class="col-md-6">Người yêu cầu:</b>

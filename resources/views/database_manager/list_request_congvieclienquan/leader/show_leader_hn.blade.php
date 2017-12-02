@@ -1,4 +1,4 @@
-@extends('admin.home_leader_hn') @section('css')
+@extends('admin.home_member_hn') @section('css')
 <!--link css only page here-->
 
 @endsection @section('main')
@@ -14,6 +14,7 @@
 			<th>Người thực hiện</th>
 			<th>Ngày hết hạn</th>
 			<th>Trạng thái</th>
+			<th>Chi tiết </th>
 		</tr>
 	</thead>
 	<tbody>
@@ -27,7 +28,7 @@
 			<td>{{$data->deadline}}</td>
 			<td>{{$data->status}}</td>
 			<td class="center">
-				<a href="{{ route('edit_leader_dn', $data->id)  }}">
+				<a href="{{ route('edit_member_hn', $data->id)  }}">
 					<span class="fa fa-pencil-square"></span>
 				</a>
 			</td>

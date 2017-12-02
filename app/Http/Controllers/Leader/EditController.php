@@ -17,7 +17,32 @@ class EditController extends Controller
 {
     public function index_hn($id)
     {
-        return view('database_manager.request.leader.edit_leader_hn');
+        $id_user = Auth::user()->id; 
+        
+        
+        
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        
+        $priority = priority::get();
+        $status = status::get();
+        $users = users::get(); 
+        $team = team::get();
+        if($data->team_id == 1){
+            $data->team_id = 'Hà Nội IT';
+        }else{
+            $data->team_id = 'Đà Nẵng IT';
+        }
+        //dd($data);
+        //echo $data->created_at;
+        if($data->status_id == 3 || $data->status_id == 5 || $data->status_id == 6){
+            $disabled = true;
+        }else {
+            $disabled = false;
+        }
+        
+        //result comment mysql
+        $ticket_th_data = ticket_thread::join('users','ticket_thread.users_id','=','users.id')->join('tickets','ticket_thread.tickets_id','=','tickets.id')->select('users.employee_name as employee','ticket_thread.content as content','ticket_thread.created_at as created_at')->where('tickets.id','=',$id)->get();
+        return view('database_manager.request.leader.edit_leader_hn')->with(['edit_data'=>$data,'priority_data'=>$priority,'status_data'=>$status,'users_data'=>$users,'team_data'=>$team,'id_user'=>$id_user,'check_status'=>$disabled,'comment_data'=>$ticket_th_data]);
     }
     public function index_dn($id)
     {
@@ -50,9 +75,45 @@ class EditController extends Controller
         
         return view('database_manager.request.leader.edit_leader_dn')->with(['edit_data'=>$data,'priority_data'=>$priority,'status_data'=>$status,'users_data'=>$users,'team_data'=>$team,'id_user'=>$id_user,'check_status'=>$disabled,'comment_data'=>$ticket_th_data]);
     }
-    public function edit_hn()
+    public function edit_hn(Request $request,$id)
     {
+        $edit = tickets::find($id);
+        //echo $id;
+        $edit->deadline = $request->deadline;
+        $edit->team_id = $request->team_id;
+        $edit->nguoi_lien_quan = $request->nguoi_lien_quan;
+        $edit->assigned_to_id = $request->assign;
+        $edit->status_id = $request->trangthai;
+        $edit->priority_id = $request->priority;
+        $edit->save();
         
+         $id_user = Auth::user()->id; 
+        
+        
+        
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        
+        $priority = priority::get();
+        $status = status::get();
+        $users = users::get(); 
+        $team = team::get();
+        if($data->team_id == 1){
+            $data->team_id = 'Hà Nội IT';
+        }else{
+            $data->team_id = 'Đà Nẵng IT';
+        }
+        //dd($data);
+        //echo $data->created_at;
+        if($data->status_id == 3 || $data->status_id == 5 || $data->status_id == 6){
+            $disabled = true;
+        }else {
+            $disabled = false;
+        }
+        
+        //result comment mysql
+        $ticket_th_data = ticket_thread::join('users','ticket_thread.users_id','=','users.id')->join('tickets','ticket_thread.tickets_id','=','tickets.id')->select('users.employee_name as employee','ticket_thread.content as content','ticket_thread.created_at as created_at')->where('tickets.id','=',$id)->get();
+        
+        return view('database_manager.request.leader.edit_leader_hn')->with(['edit_data'=>$data,'priority_data'=>$priority,'status_data'=>$status,'users_data'=>$users,'team_data'=>$team,'id_user'=>$id_user,'check_status'=>$disabled,'comment_data'=>$ticket_th_data]);
     }
     public function edit_dn(Request $request,$id)
     {

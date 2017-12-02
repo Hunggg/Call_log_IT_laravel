@@ -27,7 +27,7 @@
 			<td>{{$data->deadline}}</td>
 			<td>{{$data->status}}</td>
 			<td class="center">
-				<a href="{{ route('edit_leader_dn', $data->id)  }}">
+				<a href="{{ route('edit_leader_hn', $data->id)  }}">
 					<span class="fa fa-pencil-square"></span>
 				</a>
 			</td>
