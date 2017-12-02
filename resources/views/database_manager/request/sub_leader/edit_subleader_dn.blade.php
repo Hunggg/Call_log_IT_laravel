@@ -209,18 +209,18 @@
 <div class="modal fade" id="myModal">
 	<div class="modal-dialog">
 		<div class="modal-content">
+			<form action="{{route('edit_subleader_dn',$edit_data->id)}}" method="post" enctype="multipart/form-data">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Change Data</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
 
-			<!-- Modal Header -->
-			<div class="modal-header">
-				<h4 class="modal-title">Change Data</h4>
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			</div>
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="row">
 
-			<!-- Modal body -->
-			<div class="modal-body">
-				<div class="row">
 
-					<form action="{{route('edit_subleader_dn',$edit_data->id)}}" method="post" enctype="multipart/form-data">
 						{{csrf_field()}}
 
 						<div class="form-group col-md-6">
@@ -251,7 +251,7 @@
 							<label for="bophanit">Bộ phận IT</label>
 							<br>
 							<select name="team_id" id="bophanit" class="form-control">
-								<option value="" selected>Chọn bộ phận IT</option>
+								<option value="" selected disabled>Chọn bộ phận IT</option>
 								@foreach($team_data as $item)
 
 								<option value="{{$item->id}}">{{$item->team_name}}</option>
@@ -292,16 +292,16 @@
 						</div>
 						<!-- Modal footer -->
 
-					</form>
+
+					</div>
 				</div>
-			</div>
 
-			<div class="modal-footer">
-				<input type="submit" class="btn btn-info" value="Lưu thay đổi">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
+				<div class="modal-footer">
+					<input type="submit" class="btn btn-info" value="Lưu thay đổi">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
 
-
+			</form>
 		</div>
 	</div>
 </div>

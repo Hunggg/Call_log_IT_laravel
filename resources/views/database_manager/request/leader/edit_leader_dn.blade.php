@@ -209,17 +209,18 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 
-			<!-- Modal Header -->
-			<div class="modal-header">
-				<h4 class="modal-title">Change Data</h4>
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-			</div>
+			<form action="{{route('edit_leader_dn',$edit_data->id)}}" method="post" enctype="multipart/form-data">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Change Data</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
 
-			<!-- Modal body -->
-			<div class="modal-body">
-				<div class="row">
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="row">
 
-					<form action="{{route('edit_leader_dn',$edit_data->id)}}" method="post" enctype="multipart/form-data">
+
 						{{csrf_field()}}
 
 						<div class="form-group col-md-6">
@@ -289,17 +290,17 @@
 								@endif @endforeach
 							</select>
 						</div>
-					</form>
+					</div>
+
 				</div>
 
-			</div>
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<input type="submit" class="btn btn-info" value="Lưu thay đổi">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
 
-			<!-- Modal footer -->
-			<div class="modal-footer">
-				<input type="submit" class="btn btn-info" value="Lưu thay đổi">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
-
+			</form>
 
 		</div>
 	</div>
