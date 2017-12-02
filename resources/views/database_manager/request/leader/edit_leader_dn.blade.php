@@ -53,8 +53,6 @@
 		-1px -1px 2px #fff inset;
 		border-radius: 3px/6px;
 	}
-
-	
 </style>
 <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css"
  rel="stylesheet" /> @endsection @section('main')
@@ -144,16 +142,17 @@
 	<div class="form-group">
 		<!--comment mysql result dữ liệu trước khi nhấn nút bình luận và khi nhấn bình luận cái này sẽ hide đi-->
 		@foreach($comment_data as $item)
-		<label>{{$item->employee}}</label><br>
-                <div>
-                    <p class="glyphicon glyphicon-time">{{$item->created_at}}</p>
-                </div>
-                <div class="col-md-12 shadow">
-                    <div class="fixingbox2 col-md-12">
-                                  <h6 class="col-md-12">{{$item->content}}</h6>
-                    </div>
-	           </div>
-	   @endforeach        
+		<label>{{$item->employee}}</label>
+		<br>
+		<div>
+			<p class="glyphicon glyphicon-time">{{$item->created_at}}</p>
+		</div>
+		<div class="col-md-12 shadow">
+			<div class="fixingbox2 col-md-12">
+				<h6 class="col-md-12">{{$item->content}}</h6>
+			</div>
+		</div>
+		@endforeach
 	</div>
 </div>
 
@@ -182,9 +181,9 @@
 	<div class="form-group">
 		<label for="binhluan">Bình luận</label>
 		<br/>
-		
+
 		<select id="comment_vl" class="form-control">
-            <option value="" selected disabled >Chọn loại comment</option>
+			<option value="" selected disabled>Chọn loại comment</option>
 			<option value="0">Comment Bình thường</option>
 			<option value="1">Comment Đánh giá</option>
 			<option value="2">Comment thay đổi mức độ ưu tiên</option>
@@ -192,10 +191,10 @@
 		</select>
 		<br>
 		<!--phần này sẽ chạy trpng jquery ở duwosi-->
-        <div id="showtextarea">
-            <!--textarea-->
-        </div>
-		
+		<div id="showtextarea">
+			<!--textarea-->
+		</div>
+
 
 	</div>
 	<button id="comment" class="btn btn-primary" type="submit" style="display: none">Gửi Bình Luận</button>
@@ -290,15 +289,16 @@
 								@endif @endforeach
 							</select>
 						</div>
-						<!-- Modal footer -->
-						<div class="modal-footer">
-							<input type="submit" class="btn btn-info" value="Lưu thay đổi">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						</div>
 					</form>
 				</div>
+
 			</div>
 
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<input type="submit" class="btn btn-info" value="Lưu thay đổi">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
 
 
 		</div>

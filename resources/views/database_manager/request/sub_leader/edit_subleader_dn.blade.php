@@ -291,14 +291,15 @@
 							</select>
 						</div>
 						<!-- Modal footer -->
-						<div class="modal-footer">
-							<input type="submit" class="btn btn-info" value="Lưu thay đổi">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						</div>
+
 					</form>
 				</div>
 			</div>
 
+			<div class="modal-footer">
+				<input type="submit" class="btn btn-info" value="Lưu thay đổi">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
 
 
 		</div>
