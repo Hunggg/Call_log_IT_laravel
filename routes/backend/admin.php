@@ -13,25 +13,40 @@
             /* Route leader HN */
             Route::group(['prefix'=>'HaNoi','middleware'=>'it_hn'], function(){
                 Route::get('/','Leader\LeaderController@index_hn')->name('leader_hn');//home
-                // code Route leader HaNoi here
-                //C4,C5 
-                //thiet ke 
-                //1 home co leader HN (view create request,C4,C5)
-                //2 click job in C4 -> edit->........
-                //3 click job in C5 -> edit->.......
+                
                 Route::get('tao-yeu-cau','Leader\CreateRequestController@index_hn')->name('crequest_leader_hn');
                 Route::post('tao-yeu-cau','Leader\CreateRequestController@create_hn')->name('crequest_leader_hn');
+               
                 //edit,comment
                 Route::get('sua/{id}','Leader\EditController@index_hn')->name('edit_leader_hn');
-                Route::post('sua/{id}','Leader\EditController@edit_hn')->name('edit_leader_hn');
-                
+                Route::post('sua/{id}','Leader\EditController@edit_hn')->name('edit_leader_hn'); 
                 Route::post('sua/{id}/ajax','Leader\EditController@ajax');
                 Route::post('sua/{id}/comment-ajax','Leader\EditController@comment_ajax');
                 
+
+                // ROUTE VIỆC TÔI YÊU CẦU HN
                 Route::get('list-toi-yeu-cau','Leader\ShowIndividualRequestController@index_hn')->name('srequest_indi_leader_hn');
+                Route::get('list-toi-yeu-cau/new','Leader\ShowIndividualRequestController@new_hn')->name('srequest_indi_new_leader_hn');
+                Route::get('list-toi-yeu-cau/inprogress','Leader\ShowIndividualRequestController@inprogress_hn')->name('srequest_indi_inprogress_leader_hn');
+                Route::get('list-toi-yeu-cau/resolved','Leader\ShowIndividualRequestController@resolved_hn')->name('srequest_indi_resolved_leader_hn');
+                Route::get('list-toi-yeu-cau/outofdate','Leader\ShowIndividualRequestController@outofdate_hn')->name('srequest_indi_outofdate_leader_hn');
+
+                //ROUTE CÔNG VIỆC LIÊN QUAN HN
                 Route::get('list-cong-viec-lien-quan','Leader\ShowRelevantRequestController@index_hn')->name('srequest_relev_leader_hn');
-                Route::get('list-cong-viec-cua-team','Leader\ShowTeamRequestController@index_hn')->name('srequest_team_leader_hn');
+                Route::get('list-cong-viec-lien-quan/new','Leader\ShowRelevantRequestController@new_hn')->name('srequest_relev_new_leader_hn');
+                Route::get('list-cong-viec-lien-quan/inprogress','Leader\ShowRelevantRequestController@inprogress_hn')->name('srequest_relev_inprogress_leader_hn');
+                Route::get('list-cong-viec-lien-quan/resolved','Leader\ShowRelevantRequestController@resolved_hn')->name('srequest_relev_resolved_leader_hn');
+                Route::get('list-cong-viec-lien-quan/outofdate','Leader\ShowRelevantRequestController@outofdate_hn')->name('srequest_relev_outofdate_leader_hn');
+              
                 
+                //ROUTE CÔNG VIỆC CỦA TEAM HN
+                Route::get('list-cong-viec-cua-team','Leader\ShowTeamRequestController@index_hn')->name('srequest_team_leader_hn');
+                Route::get('list-cong-viec-cua-team/new','Leader\ShowTeamRequestController@new_hn')->name('srequest_team_new_leader_hn');
+                Route::get('list-cong-viec-cua-team/inprogress','Leader\ShowTeamRequestController@inprogress_hn')->name('srequest_team_inprogress_leader_hn');
+                Route::get('list-cong-viec-cua-team/resolved','Leader\ShowTeamRequestController@resolved_hn')->name('srequest_team_resolved_leader_hn');
+                Route::get('list-cong-viec-cua-team/outofdate','Leader\ShowTeamRequestController@outofdate_hn')->name('srequest_team_outofdate_leader_hn');
+            
+            
             });
            /* Route leader DN */
             Route::group(['prefix'=>'DaNang','middleware'=>'it_dn'], function(){
@@ -46,9 +61,30 @@
                 Route::post('sua/{id}/ajax','Leader\EditController@ajax');
                 Route::post('sua/{id}/comment-ajax','Leader\EditController@comment_ajax');
                 
+                // ROUTE VIỆC TÔI YÊU CẦU DN
                 Route::get('list-toi-yeu-cau','Leader\ShowIndividualRequestController@index_dn')->name('srequest_indi_leader_dn');
-                Route::get('list-cong-viec-lien-quan','Leader\ShowRelevantRequestController@index_dn')->name('srequest_relev_leader_dn');
+                Route::get('list-toi-yeu-cau/new','Leader\ShowIndividualRequestController@new_dn')->name('srequest_indi_new_leader_dn');
+                Route::get('list-toi-yeu-cau/inprogress','Leader\ShowIndividualRequestController@inprogress_dn')->name('srequest_indi_inprogress_leader_dn');
+                Route::get('list-toi-yeu-cau/resolved','Leader\ShowIndividualRequestController@resolved_dn')->name('srequest_indi_resolved_leader_dn');
+                Route::get('list-toi-yeu-cau/outofdate','Leader\ShowIndividualRequestController@outofdate_dn')->name('srequest_indi_outofdate_leader_dn');
+                
+                
+               
+               //ROUTE CÔNG VIỆC LIÊN QUAN HN
+               Route::get('list-cong-viec-lien-quan','Leader\ShowRelevantRequestController@index_dn')->name('srequest_relev_leader_dn');
+               Route::get('list-cong-viec-lien-quan/new','Leader\ShowRelevantRequestController@new_dn')->name('srequest_relev_new_leader_dn');
+               Route::get('list-cong-viec-lien-quan/inprogress','Leader\ShowRelevantRequestController@inprogress_dn')->name('srequest_relev_inprogress_leader_dn');
+               Route::get('list-cong-viec-lien-quan/resolved','Leader\ShowRelevantRequestController@resolved_dn')->name('srequest_relev_resolved_leader_dn');
+               Route::get('list-cong-viec-lien-quan/outofdate','Leader\ShowRelevantRequestController@outofdate_dn')->name('srequest_relev_outofdate_leader_dn');
+          
+                
+                
+                //ROUTE CÔNG VIỆC CỦA TEAM DN
                 Route::get('list-cong-viec-cua-team','Leader\ShowTeamRequestController@index_dn')->name('srequest_team_leader_dn');
+                Route::get('list-cong-viec-cua-team/new','Leader\ShowTeamRequestController@new_dn')->name('srequest_team_new_leader_dn');
+                Route::get('list-cong-viec-cua-team/inprogress','Leader\ShowTeamRequestController@inprogress_dn')->name('srequest_team_inprogress_leader_dn');
+                Route::get('list-cong-viec-cua-team/resolved','Leader\ShowTeamRequestController@resolved_dn')->name('srequest_team_resolved_leader_dn');
+                Route::get('list-cong-viec-cua-team/outofdate','Leader\ShowTeamRequestController@outofdate_dn')->name('srequest_team_outofdate_leader_dn');
                
             });
           

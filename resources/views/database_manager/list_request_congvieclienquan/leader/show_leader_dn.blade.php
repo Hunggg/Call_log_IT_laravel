@@ -1,4 +1,4 @@
-@extends('admin.home_member_dn') @section('css')
+@extends('admin.home_leader_dn') @section('css')
 <!--link css only page here-->
 
 @endsection @section('main')
