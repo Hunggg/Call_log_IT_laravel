@@ -21,14 +21,14 @@
 		@foreach($indi_data as $key => $data)
 		<tr>
 			<td>{{ $key + 1 }}</td>
-			<td>{{$data->subject}}</td>
+			<td>{{str_limit($data->subject,20)}}</td>
 			<td>{{$data->priority}}</td>
 			<td>{{$data->employee_cre}}</td>
 			<td>{{$data->employee_assi}}</td>
 			<td>{{$data->deadline}}</td>
 			<td>{{$data->status}}</td>
 			<td class="center">
-				<a href="{{ route('edit_member_hn', $data->id)  }}">
+				<a href="{{ route('edit_leader_hn', $data->id)  }}">
 					<span class="fa fa-pencil-square"></span>
 				</a>
 			</td>

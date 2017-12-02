@@ -21,7 +21,7 @@
 		@foreach($indi_data as $key => $data)
 		<tr>
 			<td>{{ $key + 1 }}</td>
-			<td>{{$data->subject}}</td>
+			<td>{{str_limit($data->subject,20)}}</td>
 			<td>{{$data->priority}}</td>
 			<td>{{$data->employee_cre}}</td>
 			<td>{{$data->employee_assi}}</td>
