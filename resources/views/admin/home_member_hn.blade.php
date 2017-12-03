@@ -21,16 +21,16 @@
                                     <a class="glyphicon glyphicon-tasks" href="{{route('srequest_indi_member_hn')}}">    All</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
+                                    <a class="glyphicon glyphicon-envelope" href="{{route('srequest_indi_new_member_hn')}}">    New</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-forward" href="flot.html">    Progess</a>
+                                    <a class="glyphicon glyphicon-forward" href="{{route('srequest_indi_inprogress_member_hn')}}">    Inprogess</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-check" href="flot.html">    Resolved</a>
+                                    <a class="glyphicon glyphicon-check" href="{{route('srequest_indi_resolved_member_hn')}}">    Resolved</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-calendar" href="flot.html">    Out Of Date</a>
+                                    <a class="glyphicon glyphicon-calendar" href="{{route('srequest_indi_outofdate_member_hn')}}">    Out Of Date</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -38,20 +38,20 @@
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Công việc liên quan<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
+                               <li>
                                     <a class="glyphicon glyphicon-tasks" href="{{route('srequest_relev_member_hn')}}">    All</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
+                                    <a class="glyphicon glyphicon-envelope" href="{{route('srequest_relev_new_member_hn')}}">    New</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-forward" href="flot.html">    Progess</a>
+                                    <a class="glyphicon glyphicon-forward" href="{{route('srequest_relev_inprogress_member_hn')}}">    Inprogess</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-check" href="flot.html">    Resolved</a>
+                                    <a class="glyphicon glyphicon-check" href="{{route('srequest_relev_resolved_member_hn')}}">    Resolved</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-calendar" href="flot.html">    Out Of Date</a>
+                                    <a class="glyphicon glyphicon-calendar" href="{{route('srequest_relev_outofdate_member_hn')}}">    Out Of Date</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -63,16 +63,16 @@
                                     <a class="glyphicon glyphicon-tasks" href="{{route('srequest_assi_member_hn')}}">    All</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
+                                    <a class="glyphicon glyphicon-envelope" href="{{route('srequest_assi_new_member_hn')}}">    New</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-forward" href="flot.html">    Progess</a>
+                                    <a class="glyphicon glyphicon-forward" href="{{route('srequest_assi_inprogress_member_hn')}}">    Inprogess</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-check" href="flot.html">    Resolved</a>
+                                    <a class="glyphicon glyphicon-check" href="{{route('srequest_assi_resolved_member_hn')}}">    Resolved</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-calendar" href="flot.html">    Out Of Date</a>
+                                    <a class="glyphicon glyphicon-calendar" href="{{route('srequest_assi_outofdate_member_hn')}}">    Out Of Date</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

@@ -108,6 +108,28 @@
                 Route::get('list-toi-yeu-cau','Sub_Leader\ShowIndividualRequestController@index_hn')->name('srequest_indi_subleader_hn');
                 Route::get('list-cong-viec-lien-quan','Sub_Leader\ShowRelevantRequestController@index_hn')->name('srequest_relev_subleader_hn');
                 Route::get('list-cong-viec-cua-team','Sub_Leader\ShowTeamRequestController@index_hn')->name('srequest_team_subleader_hn');
+            
+                // ROUTE VIỆC TÔI YÊU CẦU HN
+                Route::get('list-toi-yeu-cau','Sub_Leader\ShowIndividualRequestController@index_hn')->name('srequest_indi_subleader_hn');
+                Route::get('list-toi-yeu-cau/new','Sub_Leader\ShowIndividualRequestController@new_hn')->name('srequest_indi_new_subleader_hn');
+                Route::get('list-toi-yeu-cau/inprogress','Sub_Leader\ShowIndividualRequestController@inprogress_hn')->name('srequest_indi_inprogress_subleader_hn');
+                Route::get('list-toi-yeu-cau/resolved','Sub_Leader\ShowIndividualRequestController@resolved_hn')->name('srequest_indi_resolved_subleader_hn');
+                Route::get('list-toi-yeu-cau/outofdate','Sub_Leader\ShowIndividualRequestController@outofdate_hn')->name('srequest_indi_outofdate_subleader_hn');
+
+                //ROUTE CÔNG VIỆC LIÊN QUAN HN
+                Route::get('list-cong-viec-lien-quan','Sub_Leader\ShowRelevantRequestController@index_hn')->name('srequest_relev_subleader_hn');
+                Route::get('list-cong-viec-lien-quan/new','Sub_Leader\ShowRelevantRequestController@new_hn')->name('srequest_relev_new_subleader_hn');
+                Route::get('list-cong-viec-lien-quan/inprogress','Sub_Leader\ShowRelevantRequestController@inprogress_hn')->name('srequest_relev_inprogress_subleader_hn');
+                Route::get('list-cong-viec-lien-quan/resolved','Sub_Leader\ShowRelevantRequestController@resolved_hn')->name('srequest_relev_resolved_subleader_hn');
+                Route::get('list-cong-viec-lien-quan/outofdate','Sub_Leader\ShowRelevantRequestController@outofdate_hn')->name('srequest_relev_outofdate_subleader_hn');
+              
+                
+                //ROUTE CÔNG VIỆC CỦA TEAM HN
+                Route::get('list-cong-viec-cua-team','Sub_Leader\ShowTeamRequestController@index_hn')->name('srequest_team_subleader_hn');
+                Route::get('list-cong-viec-cua-team/new','Sub_Leader\ShowTeamRequestController@new_hn')->name('srequest_team_new_subleader_hn');
+                Route::get('list-cong-viec-cua-team/inprogress','Sub_Leader\ShowTeamRequestController@inprogress_hn')->name('srequest_team_inprogress_subleader_hn');
+                Route::get('list-cong-viec-cua-team/resolved','Sub_Leader\ShowTeamRequestController@resolved_hn')->name('srequest_team_resolved_subleader_hn');
+                Route::get('list-cong-viec-cua-team/outofdate','Sub_Leader\ShowTeamRequestController@outofdate_hn')->name('srequest_team_outofdate_subleader_hn');
             });
            /* Route subleader DN */
             Route::group(['prefix'=>'DaNang','middleware'=>'it_dn'], function(){
@@ -122,9 +144,27 @@
                 Route::post('sua/{id}/ajax','Sub_Leader\EditController@ajax');
                 Route::post('sua/{id}/comment-ajax','Sub_Leader\EditController@comment_ajax');
                 
-                Route::get('list-toi-yeu-cau','Sub_Leader\ShowIndividualRequestController@index_dn')->name('srequest_indi_subleader_dn');
-                Route::get('list-cong-viec-lien-quan','Sub_Leader\ShowRelevantRequestController@index_dn')->name('srequest_relev_subleader_dn');
-                Route::get('list-cong-viec-cua-team','Sub_Leader\ShowTeamRequestController@index_dn')->name('srequest_team_subleader_dn');
+               // ROUTE VIỆC TÔI YÊU CẦU dn
+               Route::get('list-toi-yeu-cau','Sub_Leader\ShowIndividualRequestController@index_dn')->name('srequest_indi_subleader_dn');
+               Route::get('list-toi-yeu-cau/new','Sub_Leader\ShowIndividualRequestController@new_dn')->name('srequest_indi_new_subleader_dn');
+               Route::get('list-toi-yeu-cau/inprogress','Sub_Leader\ShowIndividualRequestController@inprogress_dn')->name('srequest_indi_inprogress_subleader_dn');
+               Route::get('list-toi-yeu-cau/resolved','Sub_Leader\ShowIndividualRequestController@resolved_dn')->name('srequest_indi_resolved_subleader_dn');
+               Route::get('list-toi-yeu-cau/outofdate','Sub_Leader\ShowIndividualRequestController@outofdate_dn')->name('srequest_indi_outofdate_subleader_dn');
+
+               //ROUTE CÔNG VIỆC LIÊN QUAN dn
+               Route::get('list-cong-viec-lien-quan','Sub_Leader\ShowRelevantRequestController@index_dn')->name('srequest_relev_subleader_dn');
+               Route::get('list-cong-viec-lien-quan/new','Sub_Leader\ShowRelevantRequestController@new_dn')->name('srequest_relev_new_subleader_dn');
+               Route::get('list-cong-viec-lien-quan/inprogress','Sub_Leader\ShowRelevantRequestController@inprogress_dn')->name('srequest_relev_inprogress_subleader_dn');
+               Route::get('list-cong-viec-lien-quan/resolved','Sub_Leader\ShowRelevantRequestController@resolved_dn')->name('srequest_relev_resolved_subleader_dn');
+               Route::get('list-cong-viec-lien-quan/outofdate','Sub_Leader\ShowRelevantRequestController@outofdate_dn')->name('srequest_relev_outofdate_subleader_dn');
+             
+               
+               //ROUTE CÔNG VIỆC CỦA TEAM dn
+               Route::get('list-cong-viec-cua-team','Sub_Leader\ShowTeamRequestController@index_dn')->name('srequest_team_subleader_dn');
+               Route::get('list-cong-viec-cua-team/new','Sub_Leader\ShowTeamRequestController@new_dn')->name('srequest_team_new_subleader_dn');
+               Route::get('list-cong-viec-cua-team/inprogress','Sub_Leader\ShowTeamRequestController@inprogress_dn')->name('srequest_team_inprogress_subleader_dn');
+               Route::get('list-cong-viec-cua-team/resolved','Sub_Leader\ShowTeamRequestController@resolved_dn')->name('srequest_team_resolved_subleader_dn');
+               Route::get('list-cong-viec-cua-team/outofdate','Sub_Leader\ShowTeamRequestController@outofdate_dn')->name('srequest_team_outofdate_subleader_dn');
             });
                
           
@@ -145,9 +185,28 @@
                 //Route::post('sua/{id}/ajax','Member\EditController@ajax');
                 Route::post('sua/{id}/comment-ajax','Member\EditController@comment_ajax');
                 
+                // ROUTE công việc tôi yêu cầu
                 Route::get('list-toi-yeu-cau','Member\ShowIndividualRequestController@index_hn')->name('srequest_indi_member_hn');
+                Route::get('list-toi-yeu-cau/new','Member\ShowIndividualRequestController@new_hn')->name('srequest_indi_new_member_hn');
+                Route::get('list-toi-yeu-cau/inprogress','Member\ShowIndividualRequestController@inprogress_hn')->name('srequest_indi_inprogress_member_hn');
+                Route::get('list-toi-yeu-cau/resolved','Member\ShowIndividualRequestController@resolved_hn')->name('srequest_indi_resolved_member_hn');
+                Route::get('list-toi-yeu-cau/outofdate','Member\ShowIndividualRequestController@outofdate_hn')->name('srequest_indi_outofdate_member_hn');
+                
+                // ROUTE CÔNG VIỆC LIÊN QUAN
                 Route::get('list-cong-viec-lien-quan','Member\ShowRelevantRequestController@index_hn')->name('srequest_relev_member_hn');
+                Route::get('list-cong-viec-lien-quan/new','Member\ShowRelevantRequestController@new_hn')->name('srequest_relev_new_member_hn');
+                Route::get('list-cong-viec-lien-quan/inprogress','Member\ShowRelevantRequestController@inprogress_hn')->name('srequest_relev_inprogress_member_hn');
+                Route::get('list-cong-viec-lien-quan/resolved','Member\ShowRelevantRequestController@resolved_hn')->name('srequest_relev_resolved_member_hn');
+                Route::get('list-cong-viec-lien-quan/outofdate','Member\ShowRelevantRequestController@outofdate_hn')->name('srequest_relev_outofdate_member_hn');
+               
+               
+               //ROUTE CÔNG VIỆC TÔI ĐƯỢC GIAO
                 Route::get('list-toi-duoc-giao','Member\ShowAssignRequestController@index_hn')->name('srequest_assi_member_hn');
+                Route::get('list-toi-duoc-giao/new','Member\ShowAssignRequestController@new_hn')->name('srequest_assi_new_member_hn');
+                Route::get('list-toi-duoc-giao/inprogress','Member\ShowAssignRequestController@inprogress_hn')->name('srequest_assi_inprogress_member_hn');
+                Route::get('list-toi-duoc-giao/resolved','Member\ShowAssignRequestController@resolved_hn')->name('srequest_assi_resolved_member_hn');
+                Route::get('list-toi-duoc-giao/outofdate','Member\ShowAssignRequestController@outofdate_hn')->name('srequest_assi_outofdate_member_hn');
+
             });
            /* Route member DN */
             Route::group(['prefix'=>'DaNang','middleware'=>'it_dn'], function(){
@@ -162,9 +221,27 @@
                 //Route::post('sua/{id}/ajax','Member\EditController@ajax');
                 Route::post('sua/{id}/comment-ajax','Member\EditController@comment_ajax');
                 
+                // ROUTE công việc tôi yêu cầu
                 Route::get('list-toi-yeu-cau','Member\ShowIndividualRequestController@index_dn')->name('srequest_indi_member_dn');
+                Route::get('list-toi-yeu-cau/new','Member\ShowIndividualRequestController@new_dn')->name('srequest_indi_new_member_dn');
+                Route::get('list-toi-yeu-cau/inprogress','Member\ShowIndividualRequestController@inprogress_dn')->name('srequest_indi_inprogress_member_dn');
+                Route::get('list-toi-yeu-cau/resolved','Member\ShowIndividualRequestController@resolved_dn')->name('srequest_indi_resolved_member_dn');
+                Route::get('list-toi-yeu-cau/outofdate','Member\ShowIndividualRequestController@outofdate_dn')->name('srequest_indi_outofdate_member_dn');
+                
+                // ROUTE CÔNG VIỆC LIÊN QUAN
                 Route::get('list-cong-viec-lien-quan','Member\ShowRelevantRequestController@index_dn')->name('srequest_relev_member_dn');
+                Route::get('list-cong-viec-lien-quan/new','Member\ShowRelevantRequestController@new_dn')->name('srequest_relev_new_member_dn');
+                Route::get('list-cong-viec-lien-quan/inprogress','Member\ShowRelevantRequestController@inprogress_dn')->name('srequest_relev_inprogress_member_dn');
+                Route::get('list-cong-viec-lien-quan/resolved','Member\ShowRelevantRequestController@resolved_dn')->name('srequest_relev_resolved_member_dn');
+                Route::get('list-cong-viec-lien-quan/outofdate','Member\ShowRelevantRequestController@outofdate_dn')->name('srequest_relev_outofdate_member_dn');
+               
+               
+               //ROUTE CÔNG VIỆC TÔI ĐƯỢC GIAO
                 Route::get('list-toi-duoc-giao','Member\ShowAssignRequestController@index_dn')->name('srequest_assi_member_dn');
+                Route::get('list-toi-duoc-giao/new','Member\ShowAssignRequestController@new_dn')->name('srequest_assi_new_member_dn');
+                Route::get('list-toi-duoc-giao/inprogress','Member\ShowAssignRequestController@inprogress_dn')->name('srequest_assi_inprogress_member_dn');
+                Route::get('list-toi-duoc-giao/resolved','Member\ShowAssignRequestController@resolved_dn')->name('srequest_assi_resolved_member_dn');
+                Route::get('list-toi-duoc-giao/outofdate','Member\ShowAssignRequestController@outofdate_dn')->name('srequest_assi_outofdate_member_dn');
             });
                
           

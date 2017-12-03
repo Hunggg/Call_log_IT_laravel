@@ -21,16 +21,16 @@
                                     <a class="glyphicon glyphicon-tasks" href="{{route('srequest_indi_subleader_hn')}}">    All</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
+                                    <a class="glyphicon glyphicon-envelope" href="{{route('srequest_indi_new_subleader_hn')}}">    New</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-forward" href="flot.html">    Progess</a>
+                                    <a class="glyphicon glyphicon-forward" href="{{route('srequest_indi_inprogress_subleader_hn')}}">    Inprogress</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-check" href="flot.html">    Resolved</a>
+                                    <a class="glyphicon glyphicon-check" href="{{route('srequest_indi_resolved_subleader_hn')}}">    Resolved</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-calendar" href="flot.html">    Out Of Date</a>
+                                    <a class="glyphicon glyphicon-calendar" href="{{route('srequest_indi_outofdate_subleader_hn')}}">    Out Of Date</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -42,16 +42,16 @@
                                     <a class="glyphicon glyphicon-tasks" href="{{route('srequest_relev_subleader_hn')}}">    All</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
+                                    <a class="glyphicon glyphicon-envelope" href="{{route('srequest_relev_new_subleader_hn')}}">    New</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-forward" href="flot.html">    Progess</a>
+                                    <a class="glyphicon glyphicon-forward" href="{{route('srequest_relev_inprogress_subleader_hn')}}">    Inprogress</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-check" href="flot.html">    Resolved</a>
+                                    <a class="glyphicon glyphicon-check" href="{{route('srequest_relev_resolved_subleader_hn')}}">    Resolved</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-calendar" href="flot.html">    Out Of Date</a>
+                                    <a class="glyphicon glyphicon-calendar" href="{{route('srequest_relev_outofdate_subleader_hn')}}">    Out Of Date</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -62,6 +62,28 @@
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a class="glyphicon glyphicon-tasks" href="{{route('srequest_team_subleader_hn')}}">    All</a>
+                                </li>
+                                <li>
+                                    <a class="glyphicon glyphicon-envelope" href="{{route('srequest_team_new_subleader_hn')}}">    New</a>
+                                </li>
+                                <li>
+                                    <a class="glyphicon glyphicon-forward" href="{{route('srequest_team_inprogress_subleader_hn')}}">    Inprogress</a>
+                                </li>
+                                <li>
+                                    <a class="glyphicon glyphicon-check" href="{{route('srequest_team_resolved_subleader_hn')}}">    Resolved</a>
+                                </li>
+                                <li>
+                                    <a class="glyphicon glyphicon-calendar" href="{{route('srequest_team_outofdate_subleader_hn')}}">    Out Of Date</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Công việc của bộ phận IT Hà Nội<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a class="glyphicon glyphicon-tasks" href="flot.html">    All</a>
                                 </li>
                                 <li>
                                     <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
@@ -81,7 +103,6 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
-                        
                        
                        
                      
@@ -89,8 +110,9 @@
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
-@endsection   
+@endsection
 
 @section('name_page')
-Trang quản lý Sub-Leader bộ phận khu vực Hà Nội
-@endsection     
+Trang quản lý subleader bộ phận khu vực Hà Nội
+@endsection
+               
