@@ -126,9 +126,9 @@
 		<p id="tieude2">Nội Dung</p>
 	</div>
 	<div class="col-md-12 shadow">
-		<div class="fixingbox1 col-md-12">
-			<h2 class="col-md-12">{!!$edit_data->content!!}</h2>
-		</div>
+		<textarea name="noidung" id="noidung" class="form-control" disabled>
+			{!! $edit_data->content !!}
+		</textarea>
 
 	</div>
 </div>
@@ -251,7 +251,7 @@
 							<label for="bophanit">Bộ phận IT</label>
 							<br>
 							<select name="team_id" id="bophanit" class="form-control">
-								<option value="" selected>Chọn bộ phận IT</option>
+								<option value="" selected disabled>Chọn bộ phận IT</option>
 								@foreach($team_data as $item)
 
 								<option value="{{$item->id}}">{{$item->team_name}}</option>

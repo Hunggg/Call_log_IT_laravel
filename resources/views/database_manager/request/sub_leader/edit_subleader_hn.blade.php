@@ -126,9 +126,9 @@
 		<p id="tieude2">Nội Dung</p>
 	</div>
 	<div class="col-md-12 shadow">
-		<div class="fixingbox1 col-md-12">
-			<h2 class="col-md-12">{!!$edit_data->content!!}</h2>
-		</div>
+		<textarea name="noidung" id="noidung" class="form-control" disabled>
+			{!! $edit_data->content !!}
+		</textarea>
 
 	</div>
 </div>

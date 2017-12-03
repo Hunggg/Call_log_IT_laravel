@@ -6,11 +6,11 @@
 	$(function () {
                 $('#datetimepicker').datetimepicker({
    			format:'DD/MM/YYYY HH:mm:ss'
-});
-            });
+			});
+	});
 
-	CKEDITOR.replace( 'noidung' );
-
+	
+	$("#noidung").wysihtml5();
 </script>
 
 
@@ -44,7 +44,7 @@
 			<label for="ngayhethan">Ngày hết hạn</label>
 			<div class="form-group">
 				<div class="input-group date" id="datetimepicker">
-					<input type="text" class="form-control" name="deadline" required/>
+					<input type="text" class="form-control" name="deadline"  required/>
 					<span class="input-group-addon">
 						<span class="glyphicon glyphicon-calendar"></span>
 					</span>

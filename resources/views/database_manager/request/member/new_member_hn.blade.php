@@ -9,8 +9,7 @@
 });
             });
 
-	CKEDITOR.replace( 'noidung' );
-
+	$("#noidung").wysihtml5();
 </script>
 
 
