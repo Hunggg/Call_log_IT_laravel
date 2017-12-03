@@ -372,6 +372,7 @@
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Thay đổi deadline:{{$edit_data->deadline}}=></textarea>');
                 
             }
+			$("#binhluan2").wysihtml5();
         });
         
         $('#comment').click(function(e){
