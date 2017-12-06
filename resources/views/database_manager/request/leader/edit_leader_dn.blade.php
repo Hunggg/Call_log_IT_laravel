@@ -78,7 +78,7 @@
 		<div class="col-md-4">
 			<div>
 				<b class="col-md-6">Ngày tạo:</b>
-			</div> {{ $edit_data->created_at -> format('d/m/Y')}}
+			</div> {{ $edit_data->created_at -> format('d/m/Y') }}
 
 			<div>
 				<b class="col-md-6">Người yêu cầu:</b>
@@ -306,9 +306,7 @@
 @endsection @section('js')
 <script type="text/javascript">
 	$(function () {
-		$('#datetimepicker').datetimepicker({
-			format: 'DD/MM/YYYY HH:mm:ss'
-		});
+		$('#datetimepicker').datetimepicker();
 	});
 
 </script>
