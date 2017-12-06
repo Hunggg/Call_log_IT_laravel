@@ -78,7 +78,7 @@
 		<div class="col-md-4">
 			<div>
 				<b class="col-md-6">Ngày tạo:</b>
-			</div> {{ $edit_data->created_at -> format('d/m/Y') }}
+			</div> {{ $edit_data->created_at -> format('d/m/Y H:m:s') }}
 
 			<div>
 				<b class="col-md-6">Người yêu cầu:</b>
@@ -93,7 +93,7 @@
 		<div class="col-md-4">
 			<div>
 				<b class="col-md-6">Ngày hết hạn:</b>
-			</div> {{ $edit_data->deadline }}
+			</div> {{ date('d/m/Y H:m:s',strtotime($edit_data->deadline)) }}
 
 			<div>
 				<b class="col-md-6">Người thực hiện:</b>
