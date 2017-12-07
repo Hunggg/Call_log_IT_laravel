@@ -165,7 +165,7 @@ class EditController extends Controller
             $text = '<label for="assign">Assign</label>
 							<br>
 							<select name="assign" id="assign" class="form-control">
-                            <option value="" selected disable>Chọn người thực hiện</option>';
+                            <option value="" selected disabled>Chọn người thực hiện</option>';
             foreach($users as $item){
                 $text .= '<br><option value="'.$item->id.'">'.$item->employee_name.'</option>';
             }

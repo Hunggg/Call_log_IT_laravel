@@ -25,7 +25,7 @@
 			<td>{{$data->priority}}</td>
 			<td>{{$data->employee_cre}}</td>
 			<td>{{$data->employee_assi}}</td>
-			<td>{{$data->deadline}}</td>
+			<td>{{ date('d/m/Y',strtotime($data->deadline)) }}</td>
 			<td>{{$data->status}}</td>
 			<td class="center">
 				<a href="{{ route('edit_subleader_dn', $data->id)  }}">

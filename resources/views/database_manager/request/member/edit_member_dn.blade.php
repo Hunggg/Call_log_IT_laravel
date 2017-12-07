@@ -1,5 +1,4 @@
 @extends('admin.home_member_dn') @section('css')
-
 <style>
 	#button-style .btn {
 		margin: 10px;
@@ -34,7 +33,7 @@
 		margin-top: 10px;
 		;
 
-		height: 200px;
+		height: auto;
 		background: #F2F2F2;
 		border: 1px solid #ccc;
 		box-shadow: 1px 1px 2px #fff inset,
@@ -47,7 +46,7 @@
 		margin-top: 10px;
 		margin-bottom: 10px;
 
-		height: 70px;
+		height: auto;
 		background: #F2F2F2;
 		border: 1px solid #ccc;
 		box-shadow: 1px 1px 2px #fff inset,
@@ -66,7 +65,15 @@
 		<span class="glyphicon glyphicon-globe col-md-1"></span>
 		<p id="tieude1">{{ $edit_data->subject }}</p>
 	</div>
-	<hr>
+	@if($check_status == false)
+	<div class="col-md-3">
+		<button id="button-style" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+			Change Data
+		</button>
+
+	</div>
+	@endif
+	
 	<div class="hienthi">
 		<div class="col-md-4">
 			<div>
@@ -118,16 +125,13 @@
 		<p id="tieude2">Nội Dung</p>
 	</div>
 	<div class="col-md-12 shadow">
-		<textarea name="noidung" id="noidung" class="form-control" disabled>
-			{!! $edit_data->content !!}
-		</textarea>
-
-	</div>
+		<div name="noidung" id="noidung" class="form-control fixingbox2">
+			<h2 style="text-align: center; font-weight: bold;">{!! $edit_data->content !!}</h2>
+		</div>
+	</div>	
 </div>
 <br>
 <br>
-
-
 
 
 <!--chu ý phần này hộ cái nhé-->
@@ -142,7 +146,7 @@
 		</div>
 		<div class="col-md-12 shadow">
 			<div class="fixingbox2 col-md-12">
-				<h6 class="col-md-12">{{$item->content}}</h6>
+				<h6 class="col-md-12">{!!$item->content!!}</h6>
 			</div>
 		</div>
 		@endforeach
@@ -197,12 +201,117 @@
 <br>
 <br>
 
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
 
+			<form action="{{route('edit_member_dn',$edit_data->id)}}" method="post" enctype="multipart/form-data">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Change Data</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<div class="row">
+
+
+						{{csrf_field()}}
+
+						<div class="form-group col-md-6">
+							<label for="Mucdouutien">Mức độ ưu tiên</label>
+							<br>
+							<select name="priority" id="priority" class="form-control">
+								@foreach($priority_data as $item) @if($edit_data->priority == $item->name_priority)
+								<option value="{{$item->id}}" selected>{{$item->name_priority}}</option>
+								@else
+								<option value="{{$item->id}}">{{$item->name_priority}}</option>
+								@endif @endforeach
+							</select>
+						</div>
+
+						<div class="form-group col-md-6">
+							<label for="ngayhethan">Ngày hết hạn</label>
+							<div class="form-group">
+								<div class="input-group date" id="datetimepicker">
+									<input value="{{$edit_data->deadline}}" type="text" class="form-control" name="deadline" required/>
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group col-md-6">
+							<label for="bophanit">Bộ phận IT</label>
+							<br>
+							<select name="team_id" id="bophanit" class="form-control">
+								<option value="" selected disabled>Chọn bộ phận IT</option>
+								@foreach($team_data as $item)
+
+								<option value="{{$item->id}}">{{$item->team_name}}</option>
+
+								@endforeach
+
+
+							</select>
+						</div>
+
+						<div class="form-group col-md-6">
+							<label for="nguoilienquan">Người liên quan</label>
+							<br>
+							<input value="{{$edit_data->nguoi_lien_quan}}" type="text" name="nguoi_lien_quan" id="nguoilienquan" class="form-control"
+							/>
+						</div>
+
+
+
+
+						<div id="result" class="form-group col-md-6">
+							<!--show ajax assign-->
+						</div>
+
+
+
+
+						<div class="form-group col-md-6">
+							<label for="trangthai">Thay đổi trạng thái</label>
+							<br>
+							<select name="trangthai" id="trangthai" class="form-control">
+								@foreach($status_data as $item) @if($edit_data->status == $item->name_status)
+								<option value="{{$item->id}}" selected>{{$item->name_status}}</option>
+								@else
+								<option value="{{$item->id}}">{{$item->name_status}}</option>
+								@endif @endforeach
+							</select>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<input type="submit" class="btn btn-info" value="Lưu thay đổi">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+</div>
 
 @endsection @section('js')
+<script type="text/javascript">
+	$(function () {
+		$('#datetimepicker').datetimepicker(
+			{format:'YYYY/MM/DD HH:mm:ss'}
+		);
+	});
 
-
-
+</script>
 <script type="text/javascript">
 	$(document).ready(function(){
         $.ajaxSetup({
@@ -211,6 +320,25 @@
 	    }
 	});
         
+        $('#bophanit').change(function(){
+           /*alert($(this).val());*/
+            var bophanit = $(this).val();
+            
+            $.ajax({
+                url: "/member/DaNang/sua/{{$edit_data->id}}/ajax",
+                type: "POST",
+                datatype: "text",
+                data: {
+                    bophanit: bophanit
+                },
+                success: function(response)
+                {
+                    console.log(response);
+                    $('#result').html(response);
+                },
+                
+            });
+        });
         $('#comment_vl').change(function(){
             
             
@@ -222,6 +350,7 @@
             if(valuecmt == 0){
                 $('#showtextarea').css({"display": "true"});
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10"></textarea>');
+               
                 
             }
             if(valuecmt == 1){

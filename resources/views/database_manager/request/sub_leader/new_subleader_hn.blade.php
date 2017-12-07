@@ -4,7 +4,9 @@
  rel="stylesheet"> @endsection @section('js')
 <script type="text/javascript">
 	$(function () {
-                $('#datetimepicker').datetimepicker();
+                $('#datetimepicker').datetimepicker(
+					format:'YYYY/MM/DD HH:mm:ss'
+				);
             });
 
 	$("#noidung").wysihtml5();

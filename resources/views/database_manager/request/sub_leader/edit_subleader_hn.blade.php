@@ -1,5 +1,4 @@
 @extends('admin.home_subleader_hn') @section('css')
-
 <style>
 	#button-style .btn {
 		margin: 10px;
@@ -34,7 +33,7 @@
 		margin-top: 10px;
 		;
 
-		height: 200px;
+		height: auto;
 		background: #F2F2F2;
 		border: 1px solid #ccc;
 		box-shadow: 1px 1px 2px #fff inset,
@@ -47,7 +46,7 @@
 		margin-top: 10px;
 		margin-bottom: 10px;
 
-		height: 70px;
+		height: auto;
 		background: #F2F2F2;
 		border: 1px solid #ccc;
 		box-shadow: 1px 1px 2px #fff inset,
@@ -94,7 +93,7 @@
 		<div class="col-md-4">
 			<div>
 				<b class="col-md-6">Ngày hết hạn:</b>
-			</div>{{ date('d/m/Y H:m:s',strtotime($edit_data->deadline)) }}
+			</div> {{ date('d/m/Y H:m:s',strtotime($edit_data->deadline)) }}
 
 			<div>
 				<b class="col-md-6">Người thực hiện:</b>
@@ -126,16 +125,13 @@
 		<p id="tieude2">Nội Dung</p>
 	</div>
 	<div class="col-md-12 shadow">
-		<textarea name="noidung" id="noidung" class="form-control" disabled>
-			{!! $edit_data->content !!}
-		</textarea>
-
-	</div>
+		<div name="noidung" id="noidung" class="form-control fixingbox2">
+			<h2 style="text-align: center; font-weight: bold;">{!! $edit_data->content !!}</h2>
+		</div>
+	</div>	
 </div>
 <br>
 <br>
-
-
 
 
 <!--chu ý phần này hộ cái nhé-->
@@ -150,7 +146,7 @@
 		</div>
 		<div class="col-md-12 shadow">
 			<div class="fixingbox2 col-md-12">
-				<h6 class="col-md-12">{{$item->content}}</h6>
+				<h6 class="col-md-12">{!!$item->content!!}</h6>
 			</div>
 		</div>
 		@endforeach
@@ -277,6 +273,9 @@
 							<!--show ajax assign-->
 						</div>
 
+
+
+
 						<div class="form-group col-md-6">
 							<label for="trangthai">Thay đổi trạng thái</label>
 							<br>
@@ -288,9 +287,8 @@
 								@endif @endforeach
 							</select>
 						</div>
-
-
 					</div>
+
 				</div>
 
 				<!-- Modal footer -->
@@ -300,6 +298,7 @@
 				</div>
 
 			</form>
+
 		</div>
 	</div>
 </div>
@@ -307,12 +306,12 @@
 @endsection @section('js')
 <script type="text/javascript">
 	$(function () {
-		$('#datetimepicker').datetimepicker();
+		$('#datetimepicker').datetimepicker(
+			{format:'YYYY/MM/DD HH:mm:ss'}
+		);
 	});
 
 </script>
-
-
 <script type="text/javascript">
 	$(document).ready(function(){
         $.ajaxSetup({
@@ -322,11 +321,11 @@
 	});
         
         $('#bophanit').change(function(){
-           
+           /*alert($(this).val());*/
             var bophanit = $(this).val();
             
             $.ajax({
-                url: "/sub-leader/HaNoi/sua/{{$edit_data->id}}/ajax",
+                url: "/subleader/HaNoi/sua/{{$edit_data->id}}/ajax",
                 type: "POST",
                 datatype: "text",
                 data: {
@@ -351,6 +350,7 @@
             if(valuecmt == 0){
                 $('#showtextarea').css({"display": "true"});
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10"></textarea>');
+               
                 
             }
             if(valuecmt == 1){

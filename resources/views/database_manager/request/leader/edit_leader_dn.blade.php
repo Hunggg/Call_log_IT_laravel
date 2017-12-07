@@ -33,7 +33,7 @@
 		margin-top: 10px;
 		;
 
-		height: 200px;
+		height: auto;
 		background: #F2F2F2;
 		border: 1px solid #ccc;
 		box-shadow: 1px 1px 2px #fff inset,
@@ -46,7 +46,7 @@
 		margin-top: 10px;
 		margin-bottom: 10px;
 
-		height: 70px;
+		height: auto;
 		background: #F2F2F2;
 		border: 1px solid #ccc;
 		box-shadow: 1px 1px 2px #fff inset,
@@ -125,9 +125,9 @@
 		<p id="tieude2">Nội Dung</p>
 	</div>
 	<div class="col-md-12 shadow">
-		<textarea name="noidung" id="noidung" class="form-control" disabled>
-			{!! $edit_data->content !!}
-		</textarea>
+		<div name="noidung" id="noidung" class="form-control fixingbox2">
+			<h2 style="text-align: center; font-weight: bold;">{!! $edit_data->content !!}</h2>
+		</div>
 	</div>	
 </div>
 <br>
@@ -146,7 +146,7 @@
 		</div>
 		<div class="col-md-12 shadow">
 			<div class="fixingbox2 col-md-12">
-				<h6 class="col-md-12">{{$item->content}}</h6>
+				<h6 class="col-md-12">{!!$item->content!!}</h6>
 			</div>
 		</div>
 		@endforeach
@@ -306,7 +306,9 @@
 @endsection @section('js')
 <script type="text/javascript">
 	$(function () {
-		$('#datetimepicker').datetimepicker();
+		$('#datetimepicker').datetimepicker(
+			{format:'YYYY/MM/DD HH:mm:ss'}
+		);
 	});
 
 </script>
