@@ -31,8 +31,8 @@
 	.fixingbox1 {
 		margin: 0 auto;
 		margin-top: 10px;
-		;
-
+		
+		
 		height: auto;
 		background: #F2F2F2;
 		border: 1px solid #ccc;
@@ -46,6 +46,7 @@
 		margin-top: 10px;
 		margin-bottom: 10px;
 
+		
 		height: auto;
 		background: #F2F2F2;
 		border: 1px solid #ccc;
@@ -248,7 +249,7 @@
 							<label for="bophanit">Bộ phận IT</label>
 							<br>
 							<select name="team_id" id="bophanit" class="form-control">
-								<option value="" selected disabled>Chọn bộ phận IT</option>
+								<option value="0" selected disabled>Chọn bộ phận IT</option>
 								@foreach($team_data as $item)
 
 								<option value="{{$item->id}}">{{$item->team_name}}</option>
@@ -293,7 +294,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
-					<input type="submit" class="btn btn-info" value="Lưu thay đổi">
+					<input  id="smbtn" type="submit" class="btn btn-info" value="Lưu thay đổi" disabled>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 
@@ -304,6 +305,8 @@
 </div>
 
 @endsection @section('js')
+
+
 <script type="text/javascript">
 	$(function () {
 		$('#datetimepicker').datetimepicker(
@@ -321,8 +324,8 @@
 	});
         
         $('#bophanit').change(function(){
-           /*alert($(this).val());*/
-            var bophanit = $(this).val();
+           
+			var bophanit = $(this).val();
             
             $.ajax({
                 url: "/leader/DaNang/sua/{{$edit_data->id}}/ajax",
@@ -332,14 +335,17 @@
                     bophanit: bophanit
                 },
                 success: function(response)
-                {
-                    console.log(response);
+                {	
                     $('#result').html(response);
                 },
-                
-            });
+			});
+			
+			if( $('#bophanit').val() != '') {
+				$('#smbtn').removeAttr("disabled");
+			}
         });
-        $('#comment_vl').change(function(){
+        
+		$('#comment_vl').change(function(){
             
             
             $('#comment').show();
@@ -370,6 +376,8 @@
             }
 			$("#binhluan2").wysihtml5();
         });
+
+		
         
         $('#comment').click(function(e){
             e.preventDefault();

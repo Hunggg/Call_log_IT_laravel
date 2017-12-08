@@ -293,7 +293,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
-					<input type="submit" class="btn btn-info" value="Lưu thay đổi">
+					<input type="submit" class="btn btn-info" value="Lưu thay đổi" disabled>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 
@@ -337,7 +337,11 @@
                     $('#result').html(response);
                 },
                 
+				
             });
+			if( $('#bophanit').val() != '') {
+				$('#smbtn').removeAttr("disabled");
+			}
         });
         $('#comment_vl').change(function(){
             
