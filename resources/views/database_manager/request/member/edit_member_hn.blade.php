@@ -67,9 +67,7 @@
 	</div>
 	@if($check_status == false)
 	<div class="col-md-3">
-		<button id="button-style" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
-			Change Data
-		</button>
+		
 
 	</div>
 	@endif

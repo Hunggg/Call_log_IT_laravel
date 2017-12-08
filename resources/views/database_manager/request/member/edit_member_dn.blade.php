@@ -66,10 +66,8 @@
 		<p id="tieude1">{{ $edit_data->subject }}</p>
 	</div>
 	@if($check_status == false)
-	<div class="col-md-3">
-		<button id="button-style" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">
-			Change Data
-		</button>
+	<div class="col-md-3" >
+		
 
 	</div>
 	@endif
@@ -201,7 +199,7 @@
 <br>
 <br>
 
-<!-- The Modal -->
+{{--  <!-- The Modal -->
 <div class="modal fade" id="myModal">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -301,7 +299,7 @@
 
 		</div>
 	</div>
-</div>
+</div>  --}}
 
 @endsection @section('js')
 <script type="text/javascript">
