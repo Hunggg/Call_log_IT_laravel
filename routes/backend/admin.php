@@ -63,6 +63,7 @@
                 
                 // ROUTE VIỆC TÔI YÊU CẦU DN
                 Route::get('list-toi-yeu-cau','Leader\ShowIndividualRequestController@index_dn')->name('srequest_indi_leader_dn');
+                
                 Route::get('list-toi-yeu-cau/new','Leader\ShowIndividualRequestController@new_dn')->name('srequest_indi_new_leader_dn');
                 Route::get('list-toi-yeu-cau/inprogress','Leader\ShowIndividualRequestController@inprogress_dn')->name('srequest_indi_inprogress_leader_dn');
                 Route::get('list-toi-yeu-cau/resolved','Leader\ShowIndividualRequestController@resolved_dn')->name('srequest_indi_resolved_leader_dn');

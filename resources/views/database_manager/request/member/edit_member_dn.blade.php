@@ -65,12 +65,13 @@
 		<span class="glyphicon glyphicon-globe col-md-1"></span>
 		<p id="tieude1">{{ $edit_data->subject }}</p>
 	</div>
+<<<<<<< HEAD
 	@if($check_status == false)
 	<div class="col-md-3" >
 		
+=======
+>>>>>>> 8a89f188922ddb44a62171e4496f51bb7f362063
 
-	</div>
-	@endif
 	
 	<div class="hienthi">
 		<div class="col-md-4">

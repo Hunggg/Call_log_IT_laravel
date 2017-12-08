@@ -21,7 +21,7 @@ class ShowRelevantRequestController extends Controller
         {
             $query->where( 'a.id', '=', Auth::user()->id )
                 ->orwhere( 'b.id', '=', Auth::user()->id );
-        })->paginate(10);
+        })->get();
         
         return view('database_manager.list_request_congvieclienquan.sub_leader.show_subleader_hn')->with([
             'indi_data' => $data
@@ -36,7 +36,7 @@ class ShowRelevantRequestController extends Controller
         {
             $query->where( 'a.id', '=', Auth::user()->id )
                 ->orwhere( 'b.id', '=', Auth::user()->id );
-        })->paginate(10);
+        })->get();
         
         
        
@@ -55,7 +55,7 @@ class ShowRelevantRequestController extends Controller
         {
             $query->where( 'a.id', '=', Auth::user()->id )
                 ->orwhere( 'b.id', '=', Auth::user()->id );
-        })->where('tickets.status_id','=',1)->paginate(10);
+        })->where('tickets.status_id','=',1)->get();
         
         return view('database_manager.list_request_congvieclienquan.sub_leader.show_subleader_dn')->with([
             'indi_data' => $data
@@ -72,7 +72,7 @@ class ShowRelevantRequestController extends Controller
          {
              $query->where( 'a.id', '=', Auth::user()->id )
                  ->orwhere( 'b.id', '=', Auth::user()->id );
-         })->where('tickets.status_id','=',2)->paginate(10);
+         })->where('tickets.status_id','=',2)->get();
          
          return view('database_manager.list_request_congvieclienquan.sub_leader.show_subleader_dn')->with([
              'indi_data' => $data
@@ -88,7 +88,7 @@ class ShowRelevantRequestController extends Controller
         {
             $query->where( 'a.id', '=', Auth::user()->id )
                 ->orwhere( 'b.id', '=', Auth::user()->id );
-        })->where('tickets.status_id','=',3)->paginate(10);
+        })->where('tickets.status_id','=',3)->get();
         
         return view('database_manager.list_request_congvieclienquan.sub_leader.show_subleader_dn')->with([
             'indi_data' => $data
@@ -105,7 +105,7 @@ class ShowRelevantRequestController extends Controller
          {
              $query->where( 'a.id', '=', Auth::user()->id )
                  ->orwhere( 'b.id', '=', Auth::user()->id );
-         })->where('tickets.deadline','<',$curTime)->where('tickets.status_id','<>',5)->where('tickets.status_id','<>',6)->paginate(10);
+         })->where('tickets.deadline','<',$curTime)->where('tickets.status_id','<>',5)->where('tickets.status_id','<>',6)->get();
          
          return view('database_manager.list_request_congvieclienquan.sub_leader.show_subleader_dn')->with([
              'indi_data' => $data
@@ -123,7 +123,7 @@ class ShowRelevantRequestController extends Controller
         {
             $query->where( 'a.id', '=', Auth::user()->id )
                 ->orwhere( 'b.id', '=', Auth::user()->id );
-        })->where('tickets.status_id','=',1)->paginate(10);
+        })->where('tickets.status_id','=',1)->get();
         
         return view('database_manager.list_request_congvieclienquan.sub_leader.show_subleader_hn')->with([
             'indi_data' => $data
@@ -140,7 +140,7 @@ class ShowRelevantRequestController extends Controller
          {
              $query->where( 'a.id', '=', Auth::user()->id )
                  ->orwhere( 'b.id', '=', Auth::user()->id );
-         })->where('tickets.status_id','=',2)->paginate(10);
+         })->where('tickets.status_id','=',2)->get();
          
          return view('database_manager.list_request_congvieclienquan.sub_leader.show_subleader_hn')->with([
              'indi_data' => $data
@@ -156,7 +156,7 @@ class ShowRelevantRequestController extends Controller
          {
              $query->where( 'a.id', '=', Auth::user()->id )
                  ->orwhere( 'b.id', '=', Auth::user()->id );
-         })->where('tickets.status_id','=',3)->paginate(10);
+         })->where('tickets.status_id','=',3)->get();
          
          return view('database_manager.list_request_congvieclienquan.sub_leader.show_subleader_hn')->with([
              'indi_data' => $data
@@ -174,7 +174,7 @@ class ShowRelevantRequestController extends Controller
          {
              $query->where( 'a.id', '=', Auth::user()->id )
                  ->orwhere( 'b.id', '=', Auth::user()->id );
-         })->where('tickets.deadline','<',$curTime)->where('tickets.status_id','<>',5)->where('tickets.status_id','<>',6)->paginate(10);
+         })->where('tickets.deadline','<',$curTime)->where('tickets.status_id','<>',5)->where('tickets.status_id','<>',6)->get();
          
          return view('database_manager.list_request_congvieclienquan.sub_leader.show_subleader_hn')->with([
              'indi_data' => $data

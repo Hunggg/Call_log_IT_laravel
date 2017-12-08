@@ -10,7 +10,7 @@
 @section('main')
 <div>
     <div>
-    <table class="table">
+    <table class="table display" id="tabledata">
     <thead>
       <tr>
         <th>STT</th>
@@ -40,7 +40,7 @@
     </tbody>
   </table>
 </div>
-{!! $indi_data->appends(request()->input())->links() !!}
+
 </div>
 
 @endsection
@@ -48,4 +48,14 @@
 
 @section('js')
 <script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#tabledata').DataTable( {
+        paging: true,
+        
+    } );
+} );
+</script>
 @endsection

@@ -381,7 +381,7 @@
             var user = {{$id_user}};
             var ticket = {{$edit_data->id}};
             $.ajax({
-                url: "/leader/DaNang/sua/{{$edit_data->id}}/comment-ajax",
+                url: "/leader/HaNoi/sua/{{$edit_data->id}}/comment-ajax",
                 type: "POST",
                 datatype: "text",
                 data: {

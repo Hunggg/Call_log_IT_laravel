@@ -27,8 +27,8 @@
 	<!-- Morris Charts CSS -->
    
  
-    
-    
+    <!--data table css-->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 	
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('public/vendor/morrisjs/morris.css') }}">
     
@@ -143,6 +143,11 @@
 	<script src="{{ URL::asset('public/dist/js/wysihtml5x-toolbar.min.js') }}"></script>
 	<script src="{{ URL::asset('public/dist/js/handlebars.runtime.min.js') }}"></script>
 	<script src="{{ URL::asset('public/dist/js/bootstrap3-wysihtml5.min.js') }}"></script>
+	
+	<!--data table js-->
+	
+	<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	
 	<!-- Custom Theme JavaScript -->
 
 	<script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>

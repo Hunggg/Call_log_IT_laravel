@@ -9,10 +9,9 @@
 				);
             });
 
+	
 	$("#noidung").wysihtml5();
-
 </script>
-
 
 <script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
 

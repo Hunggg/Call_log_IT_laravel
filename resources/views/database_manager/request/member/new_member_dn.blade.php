@@ -9,8 +9,8 @@
 				);
             });
 
+	
 	$("#noidung").wysihtml5();
-
 </script>
 
 
