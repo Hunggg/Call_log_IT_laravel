@@ -3,7 +3,7 @@
 
 @endsection @section('main')
 <!--thiet ke form html nhap cong viec (request)-->
-<table class="table">
+<table class="table display" id="tabledata">
 	<thead>
 		<tr>
 			<th>STT</th>
@@ -27,7 +27,7 @@
 			<td>{{ date('d/m/Y',strtotime($data->deadline)) }}</td>
 			<td>{{$data->status}}</td>
 			<td class="center">
-				<a href="{{ route('edit_member_hn', $data->id)  }}">
+				<a href="{{ route('edit_member_dn', $data->id)  }}">
 					<span class="fa fa-pencil-square"></span>
 				</a>
 			</td>
@@ -36,8 +36,16 @@
 	</tbody>
 </table>
 </div>
-{!! $indi_data->appends(request()->input())->links() !!}
+
 </div>
 @endsection @section('js')
 <script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#tabledata').DataTable( {
+        paging: true,
+        
+    } );
+} );
+</script>
 @endsection

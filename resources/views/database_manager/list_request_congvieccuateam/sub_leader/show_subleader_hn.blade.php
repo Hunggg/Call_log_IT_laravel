@@ -3,8 +3,9 @@
 
 @endsection @section('main')
 <!--thiet ke form html nhap cong viec (request)-->
-
-<table class="table">
+<div>
+    <div>
+<table class="table display" id="tabledata">
 	<thead>
 		<tr>
 			<th>STT</th>
@@ -37,8 +38,16 @@
 	</tbody>
 </table>
 </div>
-{!! $indi_data->appends(request()->input())->links() !!}
+
 </div>
 @endsection @section('js')
 <script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#tabledata').DataTable( {
+        paging: true,
+        
+    } );
+} );
+</script>
 @endsection

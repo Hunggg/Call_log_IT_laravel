@@ -325,7 +325,7 @@
             var bophanit = $(this).val();
             
             $.ajax({
-                url: "/subleader/DaNang/sua/{{$edit_data->id}}/ajax",
+                url: "/sub-leader/DaNang/sua/{{$edit_data->id}}/ajax",
                 type: "POST",
                 datatype: "text",
                 data: {

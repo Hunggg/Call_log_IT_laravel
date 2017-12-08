@@ -4,15 +4,14 @@
  rel="stylesheet"> @endsection @section('js')
 <script type="text/javascript">
 	$(function () {
-                $('#datetimepicker').datetimepicker(
-					format:'YYYY/MM/DD HH:mm:ss'
-				);
-            });
+                $('#datetimepicker').datetimepicker({
+   			format:'YYYY/MM/DD HH:mm:ss'
+			});
+	});
 
+	
 	$("#noidung").wysihtml5();
-
 </script>
-
 
 <script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
 
