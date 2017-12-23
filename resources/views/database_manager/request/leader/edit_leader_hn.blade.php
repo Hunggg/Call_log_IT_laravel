@@ -293,7 +293,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
-					<input type="submit" class="btn btn-info" value="Lưu thay đổi" disabled>
+					<input type="submit"  id="smbtn" class="btn btn-info" value="Lưu thay đổi" disabled>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 

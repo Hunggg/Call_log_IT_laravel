@@ -46,6 +46,13 @@
                 Route::get('list-cong-viec-cua-team/resolved','Leader\ShowTeamRequestController@resolved_hn')->name('srequest_team_resolved_leader_hn');
                 Route::get('list-cong-viec-cua-team/outofdate','Leader\ShowTeamRequestController@outofdate_hn')->name('srequest_team_outofdate_leader_hn');
             
+                //ROUTE CÔNG VIỆC CỦA BPIT DN
+                Route::get('list-cong-viec-cua-teamHN','Leader\ShowTeamDHController@index_hn')->name('srequest_teamHN_leader_hn');
+                Route::get('list-cong-viec-cua-teamHN/new','Leader\ShowTeamDHController@new_hn')->name('srequest_teamHN_new_leader_hn');
+                Route::get('list-cong-viec-cua-teamHN/inprogress','Leader\ShowTeamDHController@inprogress_hn')->name('srequest_teamHN_inprogress_leader_hn');
+                Route::get('list-cong-viec-cua-teamHN/feedback','Leader\ShowTeamDHController@feedback_hn')->name('srequest_teamHN_resolved_leader_hn');
+                Route::get('list-cong-viec-cua-teamHN/outofdate','Leader\ShowTeamDHController@outofdate_hn')->name('srequest_teamHN_outofdate_leader_hn');
+                Route::get('list-cong-viec-cua-teamHN/closed','Leader\ShowTeamDHController@closed_hn')->name('srequest_teamHN_closed_leader_hn');
             
             });
            /* Route leader DN */
@@ -78,6 +85,13 @@
                Route::get('list-cong-viec-lien-quan/resolved','Leader\ShowRelevantRequestController@resolved_dn')->name('srequest_relev_resolved_leader_dn');
                Route::get('list-cong-viec-lien-quan/outofdate','Leader\ShowRelevantRequestController@outofdate_dn')->name('srequest_relev_outofdate_leader_dn');
           
+               //ROUTE CÔNG VIỆC CỦA BPIT DN
+                Route::get('list-cong-viec-cua-teamDN','Leader\ShowTeamDHController@index_dn')->name('srequest_teamDN_leader_dn');
+                Route::get('list-cong-viec-cua-teamDN/new','Leader\ShowTeamDHController@new_dn')->name('srequest_teamDN_new_leader_dn');
+                Route::get('list-cong-viec-cua-teamDN/inprogress','Leader\ShowTeamDHController@inprogress_dn')->name('srequest_teamDN_inprogress_leader_dn');
+                Route::get('list-cong-viec-cua-teamDN/feedback','Leader\ShowTeamDHController@feedback_dn')->name('srequest_teamDN_resolved_leader_dn');
+                Route::get('list-cong-viec-cua-teamDN/outofdate','Leader\ShowTeamDHController@outofdate_dn')->name('srequest_teamDN_outofdate_leader_dn');
+                Route::get('list-cong-viec-cua-teamDN/closed','Leader\ShowTeamDHController@closed_dn')->name('srequest_teamDN_closed_leader_dn');
                 
                 
                 //ROUTE CÔNG VIỆC CỦA TEAM DN

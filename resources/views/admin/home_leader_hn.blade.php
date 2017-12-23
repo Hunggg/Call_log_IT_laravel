@@ -5,7 +5,7 @@
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <a href="{{route('crequest_leader_hn')}}" class="btn btn-danger" id="addrequest">Create request</a>
+                                <a href="{{route('crequest_leader_hn')}}"><button class="btn btn-danger"> Create request </button></a>
                                
                             </div>
                             <!-- /input-group -->
@@ -83,23 +83,22 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Công việc của bộ phận IT Hà Nội<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a class="glyphicon glyphicon-tasks" href="flot.html">    All</a>
+                                    <a class="glyphicon glyphicon-tasks" href="{{route('srequest_teamHN_leader_hn')}}">    All</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-envelope" href="morris.html">    New</a>
+                                    <a class="glyphicon glyphicon-envelope" href="{{route('srequest_teamHN_new_leader_hn')}}">    New</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-forward" href="flot.html">    Progess</a>
+                                    <a class="glyphicon glyphicon-forward" href="{{route('srequest_teamHN_inprogress_leader_hn')}}">    Inprogress</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-flag" href="flot.html">    FeedBack</a>
+                                    <a class="glyphicon glyphicon-flag" href="{{route('srequest_teamHN_resolved_leader_hn')}}">    FeedBack</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-calendar" href="flot.html">    Out Of Date</a>
+                                    <a class="glyphicon glyphicon-calendar" href="{{route('srequest_teamHN_outofdate_leader_hn')}}">    Out Of Date</a>
                                 </li>
                                 <li>
-                                    <a class="glyphicon glyphicon-log-out" href="flot.html">    Closed</a>
-                                </li>
+                                    <a class="glyphicon glyphicon-log-out" href="{{route('srequest_teamHN_closed_leader_hn')}}">    Closed</a>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
