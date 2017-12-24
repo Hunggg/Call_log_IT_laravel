@@ -5,7 +5,7 @@
 
 <div>
 <div>
-<table class="table display" id="tabledata">
+<table class="table table-bordered table-hover table-striped dataTable no-footer display" id="tabledata">
 	<thead>
 		<tr>
 			<th>STT</th>
@@ -46,7 +46,13 @@
 	$(document).ready(function() {
     $('#tabledata').DataTable( {
         paging: true,
-        
+        "language": {
+            "lengthMenu": "Hiển thị _MENU_ bản ghi trong 1 trang",
+            "zeroRecords": "KHÔNG CÓ KẾT QUẢ",
+            "info": "",
+            "infoEmpty": "Không tìm thấy bản ghi nào cho tìm kiếm này",
+            "infoFiltered": "(Tìm kiếm trong _MAX_ tổng số bản ghi)"
+        }
     } );
 } );
 </script>

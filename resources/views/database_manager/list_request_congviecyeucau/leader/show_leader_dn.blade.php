@@ -10,7 +10,7 @@
 @section('main')
 <div>
     <div>
-    <table class="table display" id="tabledata">
+    <table class="table table-bordered table-hover table-striped dataTable no-footer display" id="tabledata">
     <thead>
       <tr>
         <th>STT</th>
@@ -34,7 +34,7 @@
               <td>{{$data->employee_assi}}</td>
               <td>{{ date('d/m/Y',strtotime($data->deadline)) }} </td>
               <td>{{$data->status}}</td>
-              <td class="center"><a href="{{ route('edit_leader_dn', $data->id)  }}"><span class="fa fa-pencil-square"></span></a></td>
+              <td class="center" style="text-align: center;"><a href="{{ route('edit_leader_dn', $data->id)  }}"><span class="fa fa-search"></span></a></td>
           </tr>
       @endforeach
     </tbody>
@@ -54,6 +54,13 @@
 	$(document).ready(function() {
     $('#tabledata').DataTable( {
         paging: true,   
+        "language": {
+            "lengthMenu": "Hiển thị _MENU_ bản ghi trong 1 trang",
+            "zeroRecords": "KHÔNG CÓ KẾT QUẢ",
+            "info": "",
+            "infoEmpty": "Không tìm thấy bản ghi nào cho tìm kiếm này",
+            "infoFiltered": "(Tìm kiếm trong _MAX_ tổng số bản ghi)"
+        }
     } );
 } );
 </script>

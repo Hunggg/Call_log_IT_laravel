@@ -147,7 +147,7 @@
 	<!--data table js-->
 	
 	<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>">
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 	<!-- Custom Theme JavaScript -->
 
 	<script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>
