@@ -77,7 +77,7 @@
 		<div class="col-md-4">
 			<div>
 				<b class="col-md-6">Ngày tạo:</b>
-			</div> {{ $edit_data->created_at -> format('d/m/Y H:m:s') }}
+			</div> {{ date('d/m/Y',strtotime($edit_data->created_at)) }}
 
 			<div>
 				<b class="col-md-6">Người yêu cầu:</b>

@@ -12,6 +12,7 @@
 			<th>Mức độ ưu tiên</th>
 			<th>Người yêu cầu</th>
 			<th>Người thực hiện</th>
+			<th>Ngày tạo</th>
 			<th>Ngày hết hạn</th>
 			<th>Trạng thái</th>
 			<th>Chi tiết </th>
@@ -25,11 +26,12 @@
 			<td>{{$data->priority}}</td>
 			<td>{{$data->employee_cre}}</td>
 			<td>{{$data->employee_assi}}</td>
+			<td>{{ date('d/m/Y',strtotime($data->created_at)) }}</td>
 			<td>{{ date('d/m/Y',strtotime($data->deadline)) }}</td>
 			<td>{{$data->status}}</td>
-			<td class="center">
+			<td class="center" style="text-align: center;">
 				<a href="{{ route('edit_subleader_hn', $data->id)  }}">
-					<span class="fa fa-pencil-square"></span>
+					<span class="fa fa-search"></span>
 				</a>
 			</td>
 		</tr>
@@ -54,5 +56,6 @@
         }
     } );
 } );
+
 </script>
 @endsection
