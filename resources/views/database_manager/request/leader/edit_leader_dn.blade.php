@@ -133,7 +133,22 @@
 </div>
 <br>
 <br>
-
+<div class="row">
+	<div class="col-md-9" id="font">
+		<span class="glyphicon glyphicon-picture  col-md-1"></span>
+		<p id="tieude2">Ảnh thông tin yêu cầu</p>
+	</div>
+	<div class="col-md-12 shadow">
+	    @if($edit_data->url_image == null)
+	        <img src="{{ URL::asset('public/default.jpg') }}">
+	    @else
+	    <img src="{{ URL::asset($edit_data->url_image) }}">
+	     @endif
+		
+	</div>	
+</div>
+<br>
+<br>
 
 <!--chu ý phần này hộ cái nhé-->
 <div class="row" id="result-comment-mysql">

@@ -21,7 +21,7 @@ class EditController extends Controller
         
         
         
-        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id','url_image')->where('tickets.id','=',$id)->first();
         
         $priority = priority::get();
         $status = status::get();
@@ -51,7 +51,7 @@ class EditController extends Controller
         
         
         
-        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id','url_image')->where('tickets.id','=',$id)->first();
         
         $priority = priority::get();
         $status = status::get();
@@ -91,7 +91,7 @@ class EditController extends Controller
         
         
         
-        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id','url_image')->where('tickets.id','=',$id)->first();
         
         $priority = priority::get();
         $status = status::get();
@@ -131,7 +131,7 @@ class EditController extends Controller
         
         
         
-        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id','url_image')->where('tickets.id','=',$id)->first();
         
         $priority = priority::get();
         $status = status::get();

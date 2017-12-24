@@ -13,6 +13,7 @@ use App\team;
 use App\ticket_thread;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Mail;
 class EditController extends Controller
 {
     public function index_hn($id)
@@ -21,7 +22,7 @@ class EditController extends Controller
         
         
         
-        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id','url_image')->where('tickets.id','=',$id)->first();
         
         $priority = priority::get();
         $status = status::get();
@@ -51,7 +52,7 @@ class EditController extends Controller
         
         
         
-        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id','url_image')->where('tickets.id','=',$id)->first();
         
         $priority = priority::get();
         $status = status::get();
@@ -78,6 +79,18 @@ class EditController extends Controller
     public function edit_hn(Request $request,$id)
     {
         $edit = tickets::find($id);
+        
+        //them chuc nang gui mail
+        $checkteamid = $edit->team_id;
+        $data = ['hoten'=>'Tran Quang Hung'];
+        if($checkteamid != $request->team_id){
+            Mail::send('mail.SendEmail',$data,function($message){
+                $message->from('hungcan1997@gmail.com','Quang Hưng');
+                $message->to('Nguyenthanhtung200997@gmail.com','Tùng em')->subject('Đây là mail chuyển công việc bộ phận IT ');
+            });
+        }
+        
+        
         //echo $id;
         $edit->deadline = $request->deadline;
         $edit->team_id = $request->team_id;
@@ -91,7 +104,7 @@ class EditController extends Controller
         
         
         
-        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id','url_image')->where('tickets.id','=',$id)->first();
         
         $priority = priority::get();
         $status = status::get();
@@ -118,6 +131,17 @@ class EditController extends Controller
     public function edit_dn(Request $request,$id)
     {
         $edit = tickets::find($id);
+        
+        //them chuc nang gui mail
+        $checkteamid = $edit->team_id;
+        $data = ['hoten'=>'Tran Quang Hung'];
+        if($checkteamid != $request->team_id){
+            Mail::send('mail.SendEmail',$data,function($message){
+                $message->from('hungcan1997@gmail.com','Quang Hưng');
+                $message->to('hungcan1997@gmail.com','Quang Hưng 2')->subject('Đây là mail chuyển công việc bộ phận IT ');
+            });
+        }
+        
         //echo $id;
         $edit->deadline = $request->deadline;
         $edit->team_id = $request->team_id;
@@ -131,7 +155,7 @@ class EditController extends Controller
         
         
         
-        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id')->where('tickets.id','=',$id)->first();
+        $data = tickets::join('priority','tickets.priority_id','=','priority.id')->join('users as a','tickets.created_by','=','a.id')->join('users as b','tickets.assigned_to_id','=','b.id')->join('status','tickets.status_id','=','status.id')->select('tickets.id as id','subject','priority.name_priority as priority','a.employee_name as employee_cre','b.employee_name as employee_assi','deadline','status.name_status as status','created_at','nguoi_lien_quan','team_id','content','status.id as status_id','url_image')->where('tickets.id','=',$id)->first();
         
         $priority = priority::get();
         $status = status::get();

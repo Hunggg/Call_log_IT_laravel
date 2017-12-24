@@ -2,6 +2,8 @@
     
     
 
+    Route::get('send-email','MailController@get_sendemail')->name('getSendEmail');
+    Route::post('send-email','MailController@post_sendemail')->name('postSendEmail');
 
     Route::get('login','Auth\LoginController@index')->name('login');
     Route::post('login','Auth\LoginController@login')->name('login');
