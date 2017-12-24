@@ -28,7 +28,7 @@
    
  
     <!--data table css-->
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css">
 	
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('public/vendor/morrisjs/morris.css') }}">
     
@@ -147,7 +147,7 @@
 	<!--data table js-->
 	
 	<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>">
 	<!-- Custom Theme JavaScript -->
 
 	<script src="{{ URL::asset('public/dist/js/sb-admin-2.js') }}"></script>

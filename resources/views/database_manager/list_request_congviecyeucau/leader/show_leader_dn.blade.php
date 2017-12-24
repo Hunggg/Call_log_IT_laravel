@@ -53,8 +53,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
     $('#tabledata').DataTable( {
-        paging: true,
-        
+        paging: true,   
     } );
 } );
 </script>
