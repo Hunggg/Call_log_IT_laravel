@@ -1,6 +1,10 @@
 @extends('admin.home_leader_dn') @section('css')
 <!--link css only page here-->
-
+<style>
+	table{
+		font-size: 12px;
+	}
+</style>
 @endsection @section('main')
 <div>
 	<div>
@@ -54,7 +58,7 @@
         "language": {
             "lengthMenu": "Hiển thị _MENU_ bản ghi trong 1 trang",
             "zeroRecords": "KHÔNG CÓ KẾT QUẢ",
-            "info": "",
+    
             "infoEmpty": "Không tìm thấy bản ghi nào cho tìm kiếm này",
             "infoFiltered": "(Tìm kiếm trong _MAX_ tổng số bản ghi)"
         }

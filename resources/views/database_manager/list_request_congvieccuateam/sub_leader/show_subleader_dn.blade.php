@@ -5,7 +5,7 @@
 <!--thiet ke form html nhap cong viec (request)-->
 <div>
     <div>
-<table cclass="table table-bordered table-hover table-striped dataTable no-footer display" id="tabledata">
+<table class="table table-bordered table-hover table-striped dataTable no-footer display" id="tabledata">
 	<thead>
 		<tr>
 			<th>STT</th>

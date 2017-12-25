@@ -1,3 +1,3 @@
-Hello,
-This is email sent by Mailgun API and laravel 
-Bạn nhận được 1 thông báo công việc được chuyển từ bộ phận IT khác, yêu cầu check lại công việc bộ phận IT để biết thêm chi tiết
+Xin chào,
+Đây là mail từ hệ thống gửi mail tự động
+Bộ phận IT của bạn vừa nhận được 1 công việc được chuyển từ bộ phận IT khác, vui lòng check lại công việc của bộ phận IT để biết chi tiết

@@ -81,11 +81,11 @@ class EditController extends Controller
         $edit = tickets::find($id);
         //them chuc nang gui mail
         $checkteamid = $edit->team_id;
-        $data = ['hoten'=>'Tùng Nguyễn Thanh'];
+        $data = ['hoten'=>'Mail hệ thống'];
         if($request->team_id == 2){
             Mail::send('mail.SendEmail',$data,function($message){
-                $message->from('nguyenthanhtung200997@gmail.com','Tùng Nguyễn Thanh');
-                $message->to('lonelystarladykillah@gmail.com','Tung')->subject('Đây là mail chuyển công việc bộ phận IT ');
+                $message->from('lonelystarladykillah@gmail.com','Mail hệ thống');
+                $message->to('nguyenthanhtung200997@gmail.com','Tùng')->subject('Đây là mail chuyển công việc bộ phận IT ');
             });
         }
         
@@ -133,11 +133,11 @@ class EditController extends Controller
         
         //them chuc nang gui mail
         $checkteamid = $edit->team_id;
-        $data = ['hoten'=>'Tran Quang Hung'];
-        if($checkteamid != $request->team_id){
+        $data = ['hoten'=>'Mail hệ thống'];
+        if($request->team_id == 1){
             Mail::send('mail.SendEmail',$data,function($message){
-                $message->from('lonelystarladykillah@gmail.com','Tùng');
-                $message->to('nguyenthanhtung200997@gmail.com','Tùng2')->subject('Đây là mail chuyển công việc bộ phận IT ');
+                $message->from('lonelystarladykillah@gmail.com','Mail hệ thống');
+                $message->to('hungcan1997@gmail.com','Hưng')->subject('Đây là mail chuyển công việc bộ phận IT ');
             });
         }
         
@@ -216,7 +216,7 @@ class EditController extends Controller
             foreach($ticket_th_data as $item){
                 $text .= '<label>'.$item->employee.'</label><br>';
                 $text .= '<div>
-                            <p class="glyphicon glyphicon-time">'.$item->created_at.'</p>
+                            <p class="glyphicon glyphicon-time">'.' '.$item->created_at.'</p>
                           </div><br>';
                 $text .= '<div class="col-md-12 shadow">
                             <div class="fixingbox2 col-md-12">

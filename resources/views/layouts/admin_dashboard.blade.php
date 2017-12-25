@@ -8,8 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<title>Spec IT request V1.0</title>
 
 	
@@ -35,6 +34,10 @@
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('public/vendor/font-awesome/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ URL::asset('public/dist/css/bootstrap3-wysihtml5.min.css') }}">
 	
+		
+			
+	
+	
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -47,7 +50,7 @@
 <body>
 
 	<div id="wrapper">
-
+		
 		<!-- Navigation -->
 		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; position: fixed; width:100%;">
 			<div class="navbar-header">
@@ -91,30 +94,35 @@
 		</nav>
 
 
-
+		
 		<!--main noi dung-->
 		<div id="page-wrapper" class="page-content" style="background: white;">
 			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 			<div class="content sm-gutter">
 				<ul class="breadcrumb">
 					<li>
-						<p>TRANG CHỦ</p>
+						
 					</li>
 					<li>
-						<a class="active">@yield('name_page')</a>
+						
 					</li>
 				</ul>
+				<img height="55" width="55" src='https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/13886279_115237062253326_6313898939557099100_n.jpg?oh=1ca06f93561a8db8da2cecb09a806a15&oe=5ACECE9C'>
 				@yield('main')
 			</div>
 		</div>
 		<!-- /#page-wrapper -->
-
+		
 	</div>
 	<!-- /#wrapper -->
 
     <!-- jQuery -->
   
-	
+	<footer style="padding: 1em; 
+	 color: black; 
+	 background-color: #f8f8f8; 
+	 clear: left; 
+	 text-align: center;">Copyright &copy; Rikkei Shop</footer>
 
 	<!-- Bootstrap Core JavaScript -->
 
@@ -158,7 +166,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="{{ URL::asset('public/js/bootstrap-filestyle.min.js') }}"></script>
 	
-
+	
 	@yield('js')
 
 </body>
