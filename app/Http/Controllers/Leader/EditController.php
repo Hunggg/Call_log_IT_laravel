@@ -79,14 +79,13 @@ class EditController extends Controller
     public function edit_hn(Request $request,$id)
     {
         $edit = tickets::find($id);
-        
         //them chuc nang gui mail
         $checkteamid = $edit->team_id;
-        $data = ['hoten'=>'Tran Quang Hung'];
-        if($checkteamid != $request->team_id){
+        $data = ['hoten'=>'Tùng Nguyễn Thanh'];
+        if($request->team_id == 2){
             Mail::send('mail.SendEmail',$data,function($message){
-                $message->from('hungcan1997@gmail.com','Quang Hưng');
-                $message->to('Nguyenthanhtung200997@gmail.com','Tùng em')->subject('Đây là mail chuyển công việc bộ phận IT ');
+                $message->from('nguyenthanhtung200997@gmail.com','Tùng Nguyễn Thanh');
+                $message->to('lonelystarladykillah@gmail.com','Tung')->subject('Đây là mail chuyển công việc bộ phận IT ');
             });
         }
         
@@ -137,8 +136,8 @@ class EditController extends Controller
         $data = ['hoten'=>'Tran Quang Hung'];
         if($checkteamid != $request->team_id){
             Mail::send('mail.SendEmail',$data,function($message){
-                $message->from('hungcan1997@gmail.com','Quang Hưng');
-                $message->to('hungcan1997@gmail.com','Quang Hưng 2')->subject('Đây là mail chuyển công việc bộ phận IT ');
+                $message->from('lonelystarladykillah@gmail.com','Tùng');
+                $message->to('nguyenthanhtung200997@gmail.com','Tùng2')->subject('Đây là mail chuyển công việc bộ phận IT ');
             });
         }
         

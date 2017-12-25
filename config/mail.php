@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hungcan1997@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Quang Hung'),
+        'address' => env('MAIL_FROM_ADDRESS', 'nguyenthanhtung200997@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Tùng Nguyễn Thanh'),
     ],
 
     /*
@@ -117,6 +117,15 @@ return [
 
         'paths' => [
             resource_path('views/vendor/mail'),
+        ],
+    ],
+    
+    
+    'stream' => [
+        'ssl' => [
+            'allow_self_signed' => true,
+            'verify_peer' => false,
+            'verify_peer_name' => false,
         ],
     ],
 

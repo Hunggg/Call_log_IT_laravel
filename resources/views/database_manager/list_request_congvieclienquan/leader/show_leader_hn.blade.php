@@ -9,7 +9,7 @@
 		<tr>
 			<th>STT</th>
 			<th>Tên công việc</th>
-			<th>Mức độ ưu tiên</th>
+			<th>Mức độ ưu tiên</t	h>
 			<th>Người yêu cầu</th>
 			<th>Người thực hiện</th>
 			<th>Ngày tạo</th>

@@ -10,10 +10,10 @@ class MailController extends Controller
         
     }
     public function post_sendemail(Request $request){
-        $data = ['hoten'=>'Tran Quang Hung'];
+        $data = ['hoten'=>'Tùng Nguyễn Thanh'];
         Mail::send('mail.SendEmail',$data,function($message){
-            $msg->from('hungcan1997@gmail.com','Quang Hưng');
-            $msg->to('hungcan197@gmail.com','Quang Hưng 2')->subject('Đây là mail chuyển công việc bộ phận IT ');
+            $msg->from('nguyenthanhtung200997@gmail.com','Tùng Nguyễn Thanh');
+            $msg->to('lonelystarladykillah@gmail.com','Tung2')->subject('Đây là mail chuyển công việc bộ phận IT ');
         });
     }
 }

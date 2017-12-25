@@ -141,7 +141,7 @@
 	    @if($edit_data->url_image == null)
 	        <img src="{{ URL::asset('public/default.jpg') }}">
 	    @else
-	    <img src="{{ URL::asset($edit_data->url_image) }}">
+	    <img src="{{ URL::asset($edit_data->url_image) }} " style="width:100%">
 	     @endif
 		
 	</div>	
