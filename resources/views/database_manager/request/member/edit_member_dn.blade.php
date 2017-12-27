@@ -65,14 +65,9 @@
 		<span class="glyphicon glyphicon-globe col-md-1"></span>
 		<p id="tieude1">{{ $edit_data->subject }}</p>
 	</div>
-<<<<<<< HEAD
-	@if($check_status == false)
-	<div class="col-md-3" >
-		
-=======
->>>>>>> 8a89f188922ddb44a62171e4496f51bb7f362063
 
-	
+
+
 	<div class="hienthi">
 		<div class="col-md-4">
 			<div>
@@ -127,7 +122,7 @@
 		<div name="noidung" id="noidung" class="form-control fixingbox2">
 			<h2 style="text-align: center; font-weight: bold;">{!! $edit_data->content !!}</h2>
 		</div>
-	</div>	
+	</div>
 </div>
 <br>
 <br>
@@ -142,8 +137,8 @@
 	    @else
 	    <img src="{{ URL::asset($edit_data->url_image) }}" style="width:100%">
 	     @endif
-		
-	</div>	
+
+	</div>
 </div>
 <br>
 <br>
@@ -333,11 +328,11 @@
 	        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
 	    }
 	});
-        
+
         $('#bophanit').change(function(){
            /*alert($(this).val());*/
             var bophanit = $(this).val();
-            
+
             $.ajax({
                 url: "/member/DaNang/sua/{{$edit_data->id}}/ajax",
                 type: "POST",
@@ -350,44 +345,44 @@
                     console.log(response);
                     $('#result').html(response);
                 },
-                
+
             });
         });
         $('#comment_vl').change(function(){
-            
-            
+
+
             $('#comment').show();
             $('#showtextarea').empty();
             var valuecmt = $(this).val();
-            
+
 
             if(valuecmt == 0){
                 $('#showtextarea').css({"display": "true"});
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10"></textarea>');
-               
-                
+
+
             }
             if(valuecmt == 1){
                 $('#showtextarea').css({"display": "true"});
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Đánh giá:</textarea>');
-                
+
             }
             if(valuecmt == 2){
                $('#showtextarea').css({"display": "true"});
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Mức độ ưu tiên:{{$edit_data->priority}}=></textarea>');
-                
+
             }
             if(valuecmt == 3){
                 $('#showtextarea').css({"display": "true"});
                 $('#showtextarea').append('<textarea name="binhluan" id="binhluan2" class="col-md-12" rows="10">Thay đổi deadline:{{$edit_data->deadline}}=></textarea>');
-                
+
             }
 			$("#binhluan2").wysihtml5();
         });
-        
+
         $('#comment').click(function(e){
             e.preventDefault();
-           
+
             $('#result-comment-mysql').hide();
             $('#comment').hide();
             $('#binhluan2').value = '';
@@ -404,11 +399,11 @@
                     ticket: ticket
                 },
                 success: function(response)
-                {         
+                {
                     console.log(response);
                     $('#result-comment').html(response);
                 },
-                
+
             });
             $('#showtextarea').empty();
         });
