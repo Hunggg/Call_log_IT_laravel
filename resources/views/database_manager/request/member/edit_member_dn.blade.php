@@ -210,6 +210,7 @@
 <br>
 <br>
 {{-- test merge branch quanghung2--}}
+{{-- i dont know what im doing --}}
 
 @endsection @section('js')
 <script type="text/javascript">
