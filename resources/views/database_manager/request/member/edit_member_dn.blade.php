@@ -211,7 +211,7 @@
 <br>
 {{-- test merge branch quanghung2--}}
 {{-- i dont know what im doing --}}
-
+{{-- doing deo j --}}
 @endsection @section('js')
 <script type="text/javascript">
 	$(function () {
